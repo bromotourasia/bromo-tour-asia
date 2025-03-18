@@ -1,0 +1,93 @@
+---
+import { Image } from 'astro:assets';
+
+// Gallery data - 9 images for a perfect 3x3 grid
+const galleryImages = [
+  {
+    src: "/images/gallery/bromo-sunrise-1.jpg",
+    alt: "Breathtaking sunrise view over Mount Bromo"
+  },
+  // ... other images remain the same
+];
+---
+
+<section id="gallery" class="py-24 bg-[#F9F9F9]">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <p class="inline-block px-3 py-1 text-[#20513F] font-light mb-2 border border-[#20513F] rounded-full">Experience Bromo</p>
+      <h2 class="text-4xl md:text-5xl font-semibold mb-4">Our Gallery</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        Explore the breathtaking landscapes and unforgettable moments from our tours
+      </p>
+    </div>
+    
+    <!-- Gallery Grid - 3x3 on desktop -->
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+        {galleryImages.map((image) => (
+          <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-all duration-300 aspect-square">
+            <div class="relative h-full w-full bg-gray-200 overflow-hidden group">
+              <div class="absolute inset-0 bg-gray-400 flex items-center justify-center text-center p-4 text-white text-sm">
+                {image.alt}
+              </div>
+              <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white">
+                <p class="font-medium text-center px-4">{image.alt}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+    
+    <!-- Instagram CTA - Sleeker Design -->
+    <div class="mt-16 max-w-4xl mx-auto">
+      <div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-[#20513F]/5 to-[#F68712]/5 backdrop-blur-sm">
+        <!-- Instagram-style decorative accent -->
+        <div class="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#833AB4]/30 via-[#FD1D1D]/20 to-[#F77737]/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-60"></div>
+        
+        <!-- Content container -->
+        <div class="relative z-10 p-10 md:p-12 flex flex-col md:flex-row items-center justify-between gap-8">
+          <!-- Left side content -->
+          <div class="text-left md:max-w-md">
+            <div class="mb-1 flex items-center">
+              <div class="mr-3 h-8 w-8 flex items-center justify-center rounded-full bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737]">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-white"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              </div>
+              <span class="font-semibold text-gray-900">@bromotour__</span>
+            </div>
+            <h3 class="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">Discover more on Instagram</h3>
+            <p class="text-gray-600 mb-6">Follow our Instagram for stunning photos, behind-the-scenes content, and exclusive offers only available to our social media followers.</p>
+            
+            <!-- Hashtag cloud -->
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span class="px-3 py-1 text-sm bg-white/80 text-gray-700 rounded-full shadow-sm">#BromoSunrise</span>
+              <span class="px-3 py-1 text-sm bg-white/80 text-gray-700 rounded-full shadow-sm">#EastJavaAdventure</span>
+              <span class="px-3 py-1 text-sm bg-white/80 text-gray-700 rounded-full shadow-sm">#IjenCrater</span>
+            </div>
+            
+            <!-- Follow button -->
+            <a href="https://instagram.com/bromotour__" target="_blank" rel="noopener noreferrer" 
+              class="inline-flex items-center gap-2 px-6 py-2.5 bg-black text-white rounded-lg font-medium hover:bg-gray-900 transition-colors">
+              <span>Follow Us</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4">
+                <path fill-rule="evenodd" d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z" clip-rule="evenodd" />
+              </svg>
+            </a>
+          </div>
+          
+          <!-- Right side decorative element -->
+          <div class="hidden md:block relative w-40 h-40">
+            <div class="absolute inset-0 rounded-lg border-2 border-white/30 p-1 rotate-6 bg-white/10"></div>
+            <div class="absolute inset-0 rounded-lg border-2 border-white/30 p-1 -rotate-6 bg-white/10"></div>
+            <div class="absolute inset-0 rounded-lg border-2 border-white/30 p-1 bg-gradient-to-br from-[#833AB4]/20 via-[#FD1D1D]/20 to-[#F77737]/20 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12 text-white/70">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

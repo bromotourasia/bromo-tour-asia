@@ -1,0 +1,135 @@
+---
+import { Button } from "../ui/button";
+import logobromo from '@/assets/logobromo.svg';
+import tiktokIcon from '@/assets/tiktok.svg'
+import { Menu } from "lucide-react";
+import { Facebook, Instagram, Twitter } from "lucide-react";
+
+const navLinks = [
+  { href: "#home", label: "Home" },
+  { href: "#packages", label: "Packages" },
+  { href: "#gallery", label: "Gallery" },
+  { href: "#testimonials", label: "Testimonials" },
+  { href: "#terms", label: "Terms" },
+  { href: "#contact", label: "Contact" },
+];
+---
+
+<header class="fixed w-full bg-white z-50 shadow-sm">
+  <div class="container mx-auto px-4 py-3">
+    <div class="flex justify-between items-center">
+      <!-- logo -->
+      <a href="#" class="">
+        <img src={logobromo.src} alt="Bromo Tour Logo" width="150" height="60" class="h-10 md:h-16 w-auto" />
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-6">
+        {navLinks.map(link => (
+          <a href={link.href} class="text-gray-700 hover:text-[#F68712] transition-colors font-medium">{link.label}</a>
+        ))}
+      </nav>
+      
+    
+      <!-- Desktop Social Media Icons -->
+      <div class="hidden md:flex items-center gap-4">
+        <a href="https://www.facebook.com/profile.php?id=61563141071150" class="p-2 rounded-full border border-black/10 hover:bg-[#F68712] hover:text-white transition-colors">
+          <Facebook className="h-5 w-5" />
+        </a>
+        <a href="https://instagram.com/bromotour__" class="p-2 rounded-full border border-black/10 hover:bg-[#F68712] hover:text-white transition-colors">
+          <Instagram className="h-5 w-5" />
+        </a>
+        <a href="#" class="p-2 rounded-full border border-black/10 hover:bg-[#F68712] hover:text-white transition-colors">
+          <Twitter className="h-5 w-5" />
+        </a>
+        <a href="https://www.tiktok.com/@bromotour__" class="p-2 rounded-full border border-black/10 hover:bg-[#F68712] hover:text-white transition-colors">
+          <img src={tiktokIcon.src} alt="TikTok Icon" class="h-5 w-5" />
+        </a>
+        <a href="mailto:bromotourasia@gmail.com" class="ml-2">
+          <Button 
+            className="bg-[#20513F] hover:bg-[#F68712]/90 text-white" 
+            size="default"
+          >
+            Book Now
+          </Button>
+        </a>
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="bg-[#F68712] hover:bg-[#F68712]/90 text-white p-2 rounded-md">
+          <Menu className="h-6 w-6" />
+          <span class="sr-only">Open menu</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Green Container Below Navbar -->
+  <div class="w-full bg-[#20513F] text-white">
+    <div class="container mx-auto px-4 py-2 text-sm">
+      <p class="font-light text-sm text-center">Got questions or need advice? Let's chat! <a href="#contact" class="underline hover:text-yellow-300 transition-colors">Free consultation here!</a></p>
+    </div>
+  </div>
+
+  <!-- Mobile menu (separate from header structure) -->
+  <div id="mobile-menu" class="fixed top-0 right-0 bottom-0 w-[280px] sm:w-[350px] bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+    <div class="flex flex-col h-full p-6">
+      <!-- Close button -->
+      <button id="mobile-menu-close" class="self-end p-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+        <span class="sr-only">Close menu</span>
+      </button>
+      
+      <!-- Mobile nav logo -->
+      <div class="mb-8 flex justify-center">
+        <img src={logobromo.src} alt="Bromo Tour Logo" width="120" height="48" class="h-12 w-auto" />
+      </div>
+      
+      <!-- Mobile navigation -->
+      <nav class="flex flex-col items-center gap-6 mb-8">
+        {navLinks.map(link => (
+          <a 
+            href={link.href} 
+            class="text-xl hover:text-[#F68712] transition-colors mobile-nav-link"
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+      
+      <!-- Booking button -->
+      <div class="mt-auto mb-8">
+        <a href="mailto:bromotourasia@gmail.com" class="w-full">
+          <Button 
+            className="bg-[#20513F] hover:bg-[#F68712]/90 text-white w-full" 
+            size="lg"
+          >
+            Book Now
+          </Button>
+        </a>
+      </div>
+
+      <!-- Mobile Social Icons -->
+      <div class="flex justify-center gap-4 mb-6">
+        <a href="#" class="p-2 rounded-full border border-black/10 hover:bg-[#F68712] hover:text-white transition-colors">
+          <Facebook className="h-5 w-5" />
+        </a>
+        <a href="#" class="p-2 rounded-full border border-black/10 hover:bg-[#F68712] hover:text-white transition-colors">
+          <Instagram className="h-5 w-5" />
+        </a>
+        <a href="#" class="p-2 rounded-full border border-black/10 hover:bg-[#F68712] hover:text-white transition-colors">
+          <Twitter className="h-5 w-5" />
+        </a>
+        <a href="#" class="p-2 rounded-full border border-black/10 hover:bg-[#F68712] hover:text-white transition-colors">
+          <img src={tiktokIcon.src} alt="TikTok Icon" class="h-5 w-5" />
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Mobile menu backdrop -->
+  <div id="mobile-backdrop" class="fixed inset-0 bg-black/25 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-40"></div>
+</header>
