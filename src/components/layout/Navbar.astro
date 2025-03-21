@@ -33,26 +33,24 @@ const navLinks = [
     
       <!-- Desktop Social Media Icons -->
       <div class="hidden md:flex items-center gap-4">
-        <a href="https://www.facebook.com/profile.php?id=61563141071150" class="p-2 rounded-full border border-black/10 hover:bg-[#F68712] hover:text-white transition-colors">
+        <a href="#" class="p-2 rounded-full border border-black/10 hover:bg-[#F68712] hover:text-white transition-colors">
           <Facebook className="h-5 w-5" />
         </a>
-        <a href="https://instagram.com/bromotour__" class="p-2 rounded-full border border-black/10 hover:bg-[#F68712] hover:text-white transition-colors">
+        <a href="#" class="p-2 rounded-full border border-black/10 hover:bg-[#F68712] hover:text-white transition-colors">
           <Instagram className="h-5 w-5" />
         </a>
         <a href="#" class="p-2 rounded-full border border-black/10 hover:bg-[#F68712] hover:text-white transition-colors">
           <Twitter className="h-5 w-5" />
         </a>
-        <a href="https://www.tiktok.com/@bromotour__" class="p-2 rounded-full border border-black/10 hover:bg-[#F68712] hover:text-white transition-colors">
+        <a href="#" class="p-2 rounded-full border border-black/10 hover:bg-[#F68712] hover:text-white transition-colors">
           <img src={tiktokIcon.src} alt="TikTok Icon" class="h-5 w-5" />
         </a>
-        <a href="mailto:bromotourasia@gmail.com" class="ml-2">
-          <Button 
-            className="bg-[#20513F] hover:bg-[#F68712]/90 text-white" 
-            size="default"
-          >
-            Book Now
-          </Button>
-        </a>
+        <Button 
+          className="bg-[#20513F] hover:bg-[#F68712]/90 text-white ml-2" 
+          size="default"
+        >
+          Book Now
+        </Button>
       </div>
       
       <!-- Mobile Menu Button -->
@@ -64,13 +62,12 @@ const navLinks = [
       </div>
     </div>
   </div>
-  
-  <!-- Green Container Below Navbar -->
-  <div class="w-full bg-[#20513F] text-white">
-    <div class="container mx-auto px-4 py-2 text-sm">
-      <p class="font-light text-sm text-center">Got questions or need advice? Let's chat! <a href="#contact" class="underline hover:text-yellow-300 transition-colors">Free consultation here!</a></p>
+    <!-- Green Container Below Navbar -->
+    <div class="w-full bg-[#20513F] text-white">
+      <div class="container mx-auto px-4 py-2 text-sm">
+        <p class="font-light text-sm text-center">Got questions or need advice? Let's chat! <a href="#contact" class="underline hover:text-yellow-300 transition-colors">Free consultation here!</a></p>
+      </div>
     </div>
-  </div>
 
   <!-- Mobile menu (separate from header structure) -->
   <div id="mobile-menu" class="fixed top-0 right-0 bottom-0 w-[280px] sm:w-[350px] bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-50">
@@ -102,14 +99,12 @@ const navLinks = [
       
       <!-- Booking button -->
       <div class="mt-auto mb-8">
-        <a href="mailto:bromotourasia@gmail.com" class="w-full">
-          <Button 
-            className="bg-[#20513F] hover:bg-[#F68712]/90 text-white w-full" 
-            size="lg"
-          >
-            Book Now
-          </Button>
-        </a>
+        <Button 
+          className="bg-[#20513F] hover:bg-[#F68712]/90 text-white w-full" 
+          size="lg"
+        >
+          Book Now
+        </Button>
       </div>
 
       <!-- Mobile Social Icons -->
@@ -133,3 +128,73 @@ const navLinks = [
   <!-- Mobile menu backdrop -->
   <div id="mobile-backdrop" class="fixed inset-0 bg-black/25 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-40"></div>
 </header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Mobile menu elements
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileBackdrop = document.getElementById('mobile-backdrop');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+    
+    // Open mobile menu
+    mobileMenuButton?.addEventListener('click', () => {
+      mobileMenu?.classList.remove('translate-x-full');
+      mobileBackdrop?.classList.remove('opacity-0');
+      mobileBackdrop?.classList.remove('pointer-events-none');
+      document.body.style.overflow = 'hidden'; // Prevent scrolling
+    });
+    
+    // Close mobile menu function
+    const closeMenu = () => {
+      mobileMenu?.classList.add('translate-x-full');
+      mobileBackdrop?.classList.add('opacity-0');
+      mobileBackdrop?.classList.add('pointer-events-none');
+      document.body.style.overflow = ''; // Enable scrolling
+    };
+    
+    // Close mobile menu events
+    mobileMenuClose?.addEventListener('click', closeMenu);
+    mobileBackdrop?.addEventListener('click', closeMenu);
+    
+    // Close menu when a link is clicked
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeMenu();
+        
+        // Handle smooth scrolling
+        const href = link.getAttribute('href');
+        if (href) {
+          const target = document.querySelector(href);
+          if (target) {
+            setTimeout(() => {
+              window.scrollTo({
+                top: (target as HTMLElement).offsetTop - 80,
+                behavior: 'smooth'
+              });
+            }, 300); // Wait for menu close animation
+          }
+        }
+      });
+    });
+    
+    // Smooth scrolling for all other anchor links
+    document.querySelectorAll('a[href^="#"]:not(.mobile-nav-link)').forEach(anchor => {
+      anchor.addEventListener('click', function(this: HTMLAnchorElement, e: Event) {
+        e.preventDefault();
+        const href = this.getAttribute('href');
+        if (href) {
+          const target = document.querySelector(href);
+          if (target) {
+            window.scrollTo({
+              top: (target as HTMLElement).offsetTop - 80,
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
+    });
+  });
+</script>
