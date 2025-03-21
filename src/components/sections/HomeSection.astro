@@ -5,20 +5,39 @@ import homeImageSquare from "@/assets/homeimgsquare.png"
 import homeImageLong from "@/assets/homeimglong.png"
 ---
 
-<section id="home" class="pt-28 md:pt-48" aria-label="Welcome to Bromo Tour">
+<section id="home" class="pt-28 md:pt-28" aria-label="Welcome to Bromo Tour">
   <div class="container mx-auto px-4 py-12">
     <div class="max-w-2xl mx-auto text-center lg:max-w-5xl">
       <p class="inline-block px-3 py-1 text-[#20513F] font-light mb-2 border border-[#20513F] rounded-full">Where Your Journey Begins</p>
-      <h1 class="text-5xl/14 md:text-5xl lg:text-6xl font-semibold mb-6 py-5 px-5 lg:">Experience the Magic of Bromo, Your Adventure Awaits!</h1>
-      <p class="text-sm font-light md:text-base md:font-extralight md:px-2 mb-8 px-4">Explore stunning Mount Bromo, exotic Ijen, spectacular Tumpak Sewu waterfall, tranquil Lovina Beach, and more!</p>
-      <a href="#packages">
-      <Button 
-      variant="default" 
-      size="lg" 
-      className="bg-[#20513F] hover:bg-[#20513F]/90 text-white">
-      Explore Our Packages
-      </Button>
-      </a>
+      <h1 class="text-5xl/14 md:text-5xl lg:text-6xl font-semibold mb-6 py-5 px-5">Tropical Indonesian Adventures with Local Expert Guides</h1>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto mb-6">Discover the breathtaking landscapes of Mount Bromo, the mesmerizing blue flames of Ijen, the majestic Tumpak Sewu Waterfall, and the rich cultural heritage of Yogyakarta.</p>
+      
+      <!-- Package Highlights -->
+      <div class="flex flex-wrap justify-center gap-4 mb-8">
+        <span class="bg-[#20513F]/10 text-[#20513F] px-3 py-1 rounded-full text-sm">Early Bird Discounts</span>
+        <span class="bg-[#F68712]/10 text-[#F68712] px-3 py-1 rounded-full text-sm">Exclusive Sunrise Tours</span>
+        <span class="bg-[#20513F]/10 text-[#20513F] px-3 py-1 rounded-full text-sm">Free Photography Session</span>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="#packages">
+          <Button 
+            variant="default" 
+            size="lg" 
+            className="bg-[#20513F] hover:bg-[#F68712] text-white min-w-[200px] group relative overflow-hidden">
+            <span class="relative z-10 flex items-center">
+              View All Packages
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </span>
+            <span class="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 bg-[#F68712] group-hover:h-full z-0"></span>
+          </Button>
+        </a>
+        <a href="#contact" class="text-[#20513F] hover:text-[#F68712] font-medium transition-colors underline underline-offset-4">
+          Or Contact Us for Custom Tours
+        </a>
+      </div>
     </div>
   </div>
   

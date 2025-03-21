@@ -5,13 +5,17 @@ import tiktokIcon from '@/assets/tiktok.svg'
 import { Menu } from "lucide-react";
 import { Facebook, Instagram, Twitter } from "lucide-react";
 
+// Add a prop to determine if we're on the homepage or not
+const { isNotHomePage = false } = Astro.props;
+
+// Format links based on context
 const navLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#packages", label: "Packages" },
-  { href: "#gallery", label: "Gallery" },
-  { href: "#testimonials", label: "Testimonials" },
-  { href: "#terms", label: "Terms" },
-  { href: "#contact", label: "Contact" },
+  { href: isNotHomePage ? "/#home" : "#home", label: "Home" },
+  { href: isNotHomePage ? "/#packages" : "#packages", label: "Packages" },
+  { href: isNotHomePage ? "/#gallery" : "#gallery", label: "Gallery" },
+  { href: isNotHomePage ? "/#testimonials" : "#testimonials", label: "Testimonials" },
+  { href: isNotHomePage ? "/#terms" : "#terms", label: "Terms" },
+  { href: isNotHomePage ? "/#contact" : "#contact", label: "Contact" },
 ];
 ---
 
@@ -19,7 +23,7 @@ const navLinks = [
   <div class="container mx-auto px-4 py-3">
     <div class="flex justify-between items-center">
       <!-- logo -->
-      <a href="#" class="">
+      <a href="/" class="">
         <img src={logobromo.src} alt="Bromo Tour Logo" width="150" height="60" class="h-10 md:h-16 w-auto" />
       </a>
       
@@ -65,7 +69,7 @@ const navLinks = [
     <!-- Green Container Below Navbar -->
     <div class="w-full bg-[#20513F] text-white">
       <div class="container mx-auto px-4 py-2 text-sm">
-        <p class="font-light text-sm text-center">Got questions or need advice? Let's chat! <a href="#contact" class="underline hover:text-yellow-300 transition-colors">Free consultation here!</a></p>
+        <p class="font-light text-sm text-center">Got questions or need advice? Let's chat! <a href={isNotHomePage ? "/#contact" : "#contact"} class="underline hover:text-yellow-300 transition-colors">Free consultation here!</a></p>
       </div>
     </div>
 
@@ -129,7 +133,7 @@ const navLinks = [
   <div id="mobile-backdrop" class="fixed inset-0 bg-black/25 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-40"></div>
 </header>
 
-<script>
+<script define:vars={{ isNotHomePage }}>
   document.addEventListener('DOMContentLoaded', () => {
     // Mobile menu elements
     const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -158,43 +162,46 @@ const navLinks = [
     mobileMenuClose?.addEventListener('click', closeMenu);
     mobileBackdrop?.addEventListener('click', closeMenu);
     
-    // Close menu when a link is clicked
-    mobileNavLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        closeMenu();
-        
-        // Handle smooth scrolling
-        const href = link.getAttribute('href');
-        if (href) {
-          const target = document.querySelector(href);
-          if (target) {
-            setTimeout(() => {
+    // Skip smooth scrolling logic on non-home pages for mobile links
+    if (!isNotHomePage) {
+      // Close menu when a link is clicked
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          closeMenu();
+          
+          // Handle smooth scrolling
+          const href = link.getAttribute('href');
+          if (href) {
+            const target = document.querySelector(href);
+            if (target) {
+              setTimeout(() => {
+                window.scrollTo({
+                  top: target instanceof HTMLElement ? target.offsetTop - 80 : 0,
+                  behavior: 'smooth'
+                });
+              }, 300); // Wait for menu close animation
+            }
+          }
+        });
+      });
+      
+      // Smooth scrolling for all other anchor links
+      document.querySelectorAll('a[href^="#"]:not(.mobile-nav-link)').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const href = this.getAttribute('href');
+          if (href) {
+            const target = document.querySelector(href);
+            if (target) {
               window.scrollTo({
-                top: (target as HTMLElement).offsetTop - 80,
+                top: target instanceof HTMLElement ? target.offsetTop - 80 : 0,
                 behavior: 'smooth'
               });
-            }, 300); // Wait for menu close animation
+            }
           }
-        }
+        });
       });
-    });
-    
-    // Smooth scrolling for all other anchor links
-    document.querySelectorAll('a[href^="#"]:not(.mobile-nav-link)').forEach(anchor => {
-      anchor.addEventListener('click', function(this: HTMLAnchorElement, e: Event) {
-        e.preventDefault();
-        const href = this.getAttribute('href');
-        if (href) {
-          const target = document.querySelector(href);
-          if (target) {
-            window.scrollTo({
-              top: (target as HTMLElement).offsetTop - 80,
-              behavior: 'smooth'
-            });
-          }
-        }
-      });
-    });
+    }
   });
 </script>

@@ -1,0 +1,23 @@
+---
+import MainLayout from '@/layouts/main.astro';
+import { Button } from "@/components/ui/button";
+---
+
+<MainLayout title="Page Not Found - Bromo Tour" isErrorPage={true}>
+  <div class="mt-32 pt-20 md:mt-40 md:pt-20">
+    <section class="flex items-center justify-center min-h-[60vh]">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-8xl md:text-9xl font-bold mb-6 text-[#20513F]">404</h1>
+        <h2 class="text-2xl md:text-3xl font-medium mb-4">Page Not Found</h2>
+        <p class="text-lg text-gray-600 mb-8 max-w-lg mx-auto">
+          The page you're looking for doesn't exist or has been moved.
+        </p>
+        <a href="/">
+          <Button className="bg-[#20513F] hover:bg-[#F68712] text-white text-lg px-8 py-4">
+            Back to Homepage
+          </Button>
+        </a>
+      </div>
+    </section>
+  </div>
+</MainLayout>
