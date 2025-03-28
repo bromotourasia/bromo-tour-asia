@@ -1,8 +1,0 @@
-{
-  "name": "bromo-worker",
-  "compatibility_date": "2025-03-28",
-  "main": "src/index.ts",
-  "assets": {
-    "directory": "./dist"
-  }
-}
