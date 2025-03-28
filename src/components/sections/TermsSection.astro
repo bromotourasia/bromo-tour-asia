@@ -2,31 +2,48 @@
 import { TermsAccordion, FaqAccordion } from "@/components/AccordionWrapper";
 ---
 
-<section id="terms" class="py-24 bg-white">
+<section id="terms" class="py-15 bg-white">
   <div class="container mx-auto px-4">
     <div class="text-center mb-16">
-      <p class="inline-block px-3 py-1 text-[#20513F] font-light mb-2 border border-[#20513F] rounded-full">Important Information</p>
-      <h2 class="text-4xl md:text-5xl font-semibold mb-4">Terms & Conditions</h2>
+      <p
+        class="inline-block px-3 py-1 text-[#20513F] font-light mb-2 border border-[#20513F] rounded-full"
+      >
+        Important Information
+      </p>
+      <h2 class="text-4xl md:text-5xl font-semibold mb-4">
+        Terms & Conditions
+      </h2>
       <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-        Please review our terms and conditions before booking your adventure with us.
+        Please review our terms and conditions before booking your adventure
+        with us.
       </p>
     </div>
 
     <div class="max-w-4xl mx-auto">
       <!-- Client-side rendering with client:load directive -->
       <TermsAccordion client:load />
-      
+
       <!-- FAQ Section -->
       <div class="mt-16">
-        <h3 class="text-2xl md:text-3xl font-semibold mb-8 text-center">Frequently Asked Questions</h3>
+        <h3 class="text-2xl md:text-3xl font-semibold mb-8 text-center">
+          Frequently Asked Questions
+        </h3>
         <FaqAccordion client:load />
       </div>
-      
+
       <!-- Need Help Banner -->
       <div class="mt-16 bg-[#F68712]/10 rounded-xl p-8 text-center">
-        <h3 class="text-2xl font-semibold mb-4 text-[#F68712]">Still Have Questions?</h3>
-        <p class="mb-6 text-gray-700">Our team is ready to help you with any questions or concerns about our tours or booking process.</p>
-        <a href="#contact" class="inline-block px-6 py-3 bg-[#F68712] text-white rounded-full font-medium hover:bg-[#F68712]/90 transition-colors">
+        <h3 class="text-2xl font-semibold mb-4 text-[#F68712]">
+          Still Have Questions?
+        </h3>
+        <p class="mb-6 text-gray-700">
+          Our team is ready to help you with any questions or concerns about our
+          tours or booking process.
+        </p>
+        <a
+          href="#contact"
+          class="inline-block px-6 py-3 bg-[#F68712] text-white rounded-full font-medium hover:bg-[#F68712]/90 transition-colors"
+        >
           Contact Us
         </a>
       </div>

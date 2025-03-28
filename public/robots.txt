@@ -1,8 +1,4 @@
-# robots.txt for Bromo Tour Agency
-# Allow all web crawlers to access all content
-
 User-agent: *
 Allow: /
 
-# If you have a sitemap, uncomment and update the line below
-# Sitemap: https://yourdomainname.com/sitemap.xml
+Sitemap: https://bromotour.asia/sitemap-index.xml

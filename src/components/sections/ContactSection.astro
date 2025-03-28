@@ -1,131 +1,403 @@
 ---
 import { Button } from "@/components/ui/button";
-import homeImageSquare from "@/assets/homeimgsquare.png"
-import homeImageLong from "@/assets/homeimglong.png"
+import homeImageSquare from "@/assets/homeimgsquare.png";
+import homeImageLong from "@/assets/homeimglong.png";
 ---
 
-<section id="contact" class="py-24 bg-[#fafafa]">
+<section id="contact" class="py-15 bg-[#fafafa]">
   <div class="container mx-auto px-4">
     <div class="text-center mb-16">
-      <p class="inline-block px-3 py-1 text-[#20513F] font-light mb-2">Get in Touch</p>
+      <p
+        class="inline-block px-3 py-1 text-[#20513F] font-light mb-2 border border-[#20513F] rounded-full"
+      >
+        Get In Touch
+      </p>
       <h2 class="text-4xl md:text-5xl font-semibold mb-4">Contact Us</h2>
       <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-        Have questions about our tours or want to book an adventure? Reach out to us through any of these channels.
+        Have questions about our tours or want to book an adventure? Reach out
+        to us through any of these channels.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto"
+    >
       <!-- Primary Contact Methods -->
-      <div class="lg:col-span-1">
-        <h3 class="text-2xl font-semibold mb-8">Contact Methods</h3>
-        
-        <div class="space-y-8">
+      <div class="lg:col-span-1 bg-white p-6 border border-gray-200">
+        <h3 class="text-2xl font-semibold mb-6 pb-2 border-b border-gray-100">
+          Contact Methods
+        </h3>
+
+        <div class="space-y-6">
           <!-- Email -->
           <div class="flex items-start">
-            <div class="flex-shrink-0 h-12 w-12 rounded-full bg-[#20513F]/10 flex items-center justify-center text-[#20513F] mr-4">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <div
+              class="flex-shrink-0 h-10 w-10 flex items-center justify-center bg-[#20513F] text-white mr-4"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="w-5 h-5"
+                ><path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                ></path><polyline points="22,6 12,13 2,6"></polyline></svg
+              >
             </div>
             <div>
               <h4 class="font-medium text-gray-900 mb-1">Email</h4>
-              <a href="mailto:bromotourasia@gmail.com" class="text-gray-600 hover:text-[#F68712]">bromotourasia@gmail.com</a>
-              <p class="text-sm text-gray-500 mt-1">For inquiries and booking information</p>
+              <a
+                href="mailto:bromotourasia@gmail.com"
+                class="text-gray-600 hover:text-[#F68712]"
+                >bromotourasia@gmail.com</a
+              >
+              <p class="text-sm text-gray-500 mt-1">
+                For inquiries and booking information
+              </p>
             </div>
           </div>
-          
+
           <!-- WhatsApp -->
           <div class="flex items-start">
-            <div class="flex-shrink-0 h-12 w-12 rounded-full bg-[#25D366]/10 flex items-center justify-center text-[#25D366] mr-4">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            <div
+              class="flex-shrink-0 h-10 w-10 flex items-center justify-center bg-[#25D366] text-white mr-4"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  fill="#fff"
+                  d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"
+                ></path><path
+                  fill="#fff"
+                  d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z"
+                ></path><path
+                  fill="#cfd8dc"
+                  d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z"
+                ></path><path
+                  fill="#40c351"
+                  d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z"
+                ></path><path
+                  fill="#fff"
+                  fill-rule="evenodd"
+                  d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z"
+                  clip-rule="evenodd"></path>
+              </svg>
             </div>
             <div>
               <h4 class="font-medium text-gray-900 mb-1">WhatsApp</h4>
-              <a href="https://wa.me/6281234567890" class="text-gray-600 hover:text-[#25D366]">+62 857-2179-1403</a>
-              <p class="text-sm text-gray-500 mt-1">Fast response for inquiries and bookings</p>
+              <a
+                href="https://wa.me/6285707307178"
+                class="text-gray-600 hover:text-[#25D366]">+62 857-0730-7178</a
+              >
+              <p class="text-sm text-gray-500 mt-1">
+                Fast response for inquiries and bookings
+              </p>
             </div>
           </div>
 
           <!-- WeChat -->
           <div class="flex items-start">
-            <div class="flex-shrink-0 h-12 w-12 rounded-full bg-[#09B83E]/10 flex items-center justify-center text-[#09B83E] mr-4">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                <path d="M8.85,14.2A1,1,0,0,1,8,14.1H8a1.18,1.18,0,0,1-.53-.18.92.92,0,0,1-.4-1.14,1.33,1.33,0,0,1,.53-.54l.06,0a.78.78,0,0,1,.55-.06.73.73,0,0,1,.37.28A.66.66,0,0,1,8.85,13a1,1,0,0,1-.17.73A1.06,1.06,0,0,1,8.85,14.2ZM6.27,9.31a.9.9,0,0,0,.32-.48.5.5,0,0,0-.1-.51.49.49,0,0,0-.31-.13.9.9,0,0,0-.4.1.93.93,0,0,0-.19.13.63.63,0,0,0-.21.46.5.5,0,0,0,.11.37.56.56,0,0,0,.36.2h.11A.89.89,0,0,0,6.27,9.31ZM24,11.85a10.44,10.44,0,0,1-5.78,9.28,11.9,11.9,0,0,1-4.27,1h-.65a1.86,1.86,0,0,1-.69-.15,1.16,1.16,0,0,1-.7-1.25c0-.16,0-.32.06-.47s.1-.33.14-.49a.78.78,0,0,0,0-.35c-.11-.32-.42-.23-.59-.19l-3,1.16a3.44,3.44,0,0,1-1.62.41c-.26,0-.51,0-.77,0A10.44,10.44,0,0,1,.9,14.86,9.78,9.78,0,0,1,0,11.61,10.45,10.45,0,0,1,10.36,1.27h.89a12.4,12.4,0,0,1,3.42.7,10.43,10.43,0,0,1,7,9.23A10.73,10.73,0,0,1,24,11.85ZM7.58,5.85a12.43,12.43,0,0,0-5.5,2A7.79,7.79,0,0,0,0,11.93a7.15,7.15,0,0,0,.42,2.35,8.7,8.7,0,0,0,5.23,5A9.3,9.3,0,0,0,9,20a6.14,6.14,0,0,0,1.13-.15.66.66,0,0,1,.38,0c.34.14.23.36.16.7s-.15,1-.14,1.43a1.35,1.35,0,0,0,1.51,1.38,8.82,8.82,0,0,0,2.42-.6A9.83,9.83,0,0,0,19,19.65a9.11,9.11,0,0,0,2.39-9.23A8.4,8.4,0,0,0,16.06,5a10.52,10.52,0,0,0-5.82-1.45A10.61,10.61,0,0,0,7.58,5.85Zm9.24,5.47a.79.79,0,0,0-.33-.63.86.86,0,0,0-.64-.18.81.81,0,0,0-.64.35,1,1,0,0,0-.14.76,1,1,0,0,0,.41.52,1,1,0,0,0,.63.17,1.09,1.09,0,0,0,.64-.32A1.2,1.2,0,0,0,16.82,11.32ZM13.64,6.64a1.09,1.09,0,0,0-.71.24,1,1,0,0,0-.32.71,1.06,1.06,0,0,0,.28.71,1.18,1.18,0,0,0,.74.35h.18A1.17,1.17,0,0,0,14.5,8.4a1.08,1.08,0,0,0,.17-.8,1.08,1.08,0,0,0-.33-.63A1.2,1.2,0,0,0,13.64,6.64Zm9,4.48A12.38,12.38,0,0,1,16,19.32a2.35,2.35,0,0,1-1.21.46c-.44,0-.56-.37-.52-.74,0-.19.09-.38.13-.57a2.76,2.76,0,0,0,.08-.36.47.47,0,0,0-.13-.46.61.61,0,0,0-.42-.14,1.92,1.92,0,0,0-.42,0,9.19,9.19,0,0,1-5-1.33,6.24,6.24,0,0,1-2.83-3.11,6.91,6.91,0,0,1-.4-4,5.82,5.82,0,0,1,3-4.2,10,10,0,0,1,4.12-1.06c.46,0,.92,0,1.37.07a9.12,9.12,0,0,1,5.48,2.06A5.72,5.72,0,0,1,21.59,8.5,6.54,6.54,0,0,1,22.62,11.12Z"/>
+            <div
+              class="flex-shrink-0 h-10 w-10 flex items-center justify-center bg-[#09B83E] text-white mr-4"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6"
+                viewBox="0 0 48 48"
+              >
+                <path
+                  fill="#8BC34A"
+                  d="M18,6C9.2,6,2,12,2,19.5c0,4.3,2.3,8,6,10.5l-2,6l6.3-3.9C14,32.7,16,33,18,33c8.8,0,16-6,16-13.5C34,12,26.8,6,18,6z"
+                ></path><path
+                  fill="#7CB342"
+                  d="M20,29c0-6.1,5.8-11,13-11c0.3,0,0.6,0,0.9,0c-0.1-0.7-0.3-1.4-0.5-2c-0.1,0-0.3,0-0.4,0c-8.3,0-15,5.8-15,13c0,1.4,0.3,2.7,0.7,4c0.7,0,1.4-0.1,2.1-0.2C20.3,31.6,20,30.3,20,29z"
+                ></path><path
+                  fill="#CFD8DC"
+                  d="M46,29c0-6.1-5.8-11-13-11c-7.2,0-13,4.9-13,11s5.8,11,13,11c1.8,0,3.5-0.3,5-0.8l5,2.8l-1.4-4.8C44.3,35.2,46,32.3,46,29z"
+                ></path><path
+                  fill="#33691E"
+                  d="M14,15c0,1.1-0.9,2-2,2s-2-0.9-2-2s0.9-2,2-2S14,13.9,14,15z M24,13c-1.1,0-2,0.9-2,2s0.9,2,2,2s2-0.9,2-2S25.1,13,24,13z"
+                ></path><path
+                  fill="#546E7A"
+                  d="M30,26.5c0,0.8-0.7,1.5-1.5,1.5S27,27.3,27,26.5s0.7-1.5,1.5-1.5S30,25.7,30,26.5z M37.5,25c-0.8,0-1.5,0.7-1.5,1.5s0.7,1.5,1.5,1.5s1.5-0.7,1.5-1.5S38.3,25,37.5,25z"
+                ></path>
               </svg>
             </div>
             <div>
               <h4 class="font-medium text-gray-900 mb-1">WeChat</h4>
-              <a href="#" class="text-gray-600 hover:text-[#09B83E]">bromotour123</a>
-              <p class="text-sm text-gray-500 mt-1">For our international guests</p>
+              <span class="text-gray-600 cursor-default">bromotour123</span>
+              <p class="text-sm text-gray-500 mt-1">
+                For our international guests
+              </p>
             </div>
           </div>
-          
+
           <!-- Social Media -->
-          <div class="pt-6 mt-8">
+          <div class="pt-4 mt-6 border-t border-gray-100">
             <h4 class="font-medium text-gray-900 mb-4">Follow Us</h4>
             <div class="flex flex-wrap gap-3">
-              <a href="https://instagram.com/bromotour__" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center h-12 w-12 rounded-full bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#F77737] text-white hover:opacity-90 transition-opacity">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              <a
+                href="https://instagram.com/bromotour__"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center justify-center h-10 w-10 bg-[#E1306C] text-white"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="w-5 h-5"
+                  ><rect x="2" y="2" width="20" height="20" rx="5" ry="5"
+                  ></rect><title>Instagram</title><path
+                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                  ></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"
+                  ></line></svg
+                >
               </a>
-              
-              <a href="https://www.facebook.com/profile.php?id=61563141071150" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center h-12 w-12 rounded-full bg-[#1877F2] text-white hover:opacity-90 transition-opacity">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+
+              <a
+                href="https://www.facebook.com/profile.php?id=61563141071150"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center justify-center h-10 w-10 text-white"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-14 h-14"
+                  viewBox="0,0,256,256"
+                >
+                  <g
+                    fill="#4766ba"
+                    fill-rule="nonzero"
+                    stroke="none"
+                    stroke-width="1"
+                    stroke-linecap="butt"
+                    stroke-linejoin="miter"
+                    stroke-miterlimit="10"
+                    stroke-dasharray=""
+                    stroke-dashoffset="0"
+                    font-family="none"
+                    font-weight="none"
+                    font-size="none"
+                    text-anchor="none"
+                    style="mix-blend-mode: normal"
+                    ><g transform="scale(5.12,5.12)"
+                      ><title>Facebook</title><path
+                        d="M41,4h-32c-2.76,0 -5,2.24 -5,5v32c0,2.76 2.24,5 5,5h32c2.76,0 5,-2.24 5,-5v-32c0,-2.76 -2.24,-5 -5,-5zM37,19h-2c-2.14,0 -3,0.5 -3,2v3h5l-1,5h-4v15h-5v-15h-4v-5h4v-3c0,-4 2,-7 6,-7c2.9,0 4,1 4,1z"
+                      ></path></g
+                    ></g
+                  >
+                </svg>
               </a>
-              
-              <a href="https://t.me/bromotourasia" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center h-12 w-12 rounded-full bg-[#0088cc] text-white hover:opacity-90 transition-opacity">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M21.198 2.433a2.242 2.242 0 0 0-1.022.215l-8.609 3.33c-2.068.8-4.133 1.598-5.724 2.21a405.15 405.15 0 0 1-2.849 1.09c-.42.147-.99.332-1.473.901-.728.968.193 1.798.919 2.286 1.61.516 3.275 1.009 4.654 1.472.846 1.467 1.767 3.212 2.662 4.827.45.82.78 2.345 1.938 2.458 1.23.117 1.766-.522 2.93-1.737.603-.63 1.174-1.33 1.653-1.918a298.91 298.91 0 0 1 4.63 3.42c.59.421 1.175.847 1.202 1.76.22.886-.226 1.558-.751 1.955-.406.3-.909.396-1.368.396a2.88 2.88 0 0 1-1.078-.132c-.229.616-.285 1.236-.244 1.617.057.52.062 1.12 1.331 1.12.877 0 1.721-.236 2.427-.618a4.891 4.891 0 0 0 2.306-2.622c.154-.495.242-1.02.242-1.571 0-1.342-.425-2.158-1.175-3.003-.313-.35-1.658-1.435-3.119-2.626a84.491 84.491 0 0 1 1.975-3.468c.756-1.28 1.416-2.642 1.446-3.415.02-.531-.238-1.05-.81-1.325a1.59 1.59 0 0 0-.732-.172z"/></svg>
+
+              <a
+                href="https://t.me/bromotourasia"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center justify-center h-10 w-10 text-white"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-14 h-14"
+                  viewBox="0 0 48 48"
+                >
+                  <title>Telegram</title>
+                  <path
+                    fill="#29b6f6"
+                    d="M24 4A20 20 0 1 0 24 44A20 20 0 1 0 24 4Z"></path><path
+                    fill="#fff"
+                    d="M33.95,15l-3.746,19.126c0,0-0.161,0.874-1.245,0.874c-0.576,0-0.873-0.274-0.873-0.274l-8.114-6.733 l-3.97-2.001l-5.095-1.355c0,0-0.907-0.262-0.907-1.012c0-0.625,0.933-0.923,0.933-0.923l21.316-8.468 c-0.001-0.001,0.651-0.235,1.126-0.234C33.667,14,34,14.125,34,14.5C34,14.75,33.95,15,33.95,15z"
+                  ></path><path
+                    fill="#b0bec5"
+                    d="M23,30.505l-3.426,3.374c0,0-0.149,0.115-0.348,0.12c-0.069,0.002-0.143-0.009-0.219-0.043 l0.964-5.965L23,30.505z"
+                  ></path><path
+                    fill="#cfd8dc"
+                    d="M29.897,18.196c-0.169-0.22-0.481-0.26-0.701-0.093L16,26c0,0,2.106,5.892,2.427,6.912 c0.322,1.021,0.58,1.045,0.58,1.045l0.964-5.965l9.832-9.096C30.023,18.729,30.064,18.416,29.897,18.196z"
+                  ></path>
+                </svg>
               </a>
-              
-              <a href="https://www.tiktok.com/@bromotour__" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center h-12 w-12 rounded-full bg-black text-white hover:opacity-90 transition-opacity">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+
+              <a
+                href="https://www.tiktok.com/@bromotour__"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center justify-center h-10 w-10 bg-black text-white"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-5 h-5"
+                >
+                  <title>Tiktok</title>
+                  <path
+                    d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"
+                  ></path>
                 </svg>
               </a>
             </div>
           </div>
         </div>
       </div>
-      
+
       <!-- About Us -->
-      <div class="lg:col-span-2">
-        <h3 class="text-2xl font-semibold mb-8">About Us</h3>
+      <div class="lg:col-span-2 bg-white p-6 border border-gray-200">
+        <h3 class="text-2xl font-semibold mb-6 pb-2 border-b border-gray-100">
+          About Us
+        </h3>
         <div class="text-gray-600 space-y-4">
-          <p>We are a new tour & travel company established in 2024. Our home base is located in Probolinggo, East Java, as this is where we grew up and it is very close to the famous volcanic tourist attraction, Mount Bromo.</p>
-          
-          <p>Although our company is relatively young, our mentors are highly experienced individuals in the fields of transportation, hospitality, and travel management. On average, our mentors have been involved in the travel industry for over 15 years. Some of us are the second generation of our senior mentors.</p>
-          
-          <p>Currently, we operate tour packages to Yogyakarta (Borobudur, Prambanan, Jomblang Cave, Ijo Temple, etc.), Mount Bromo, Mount Ijen, Tumpak Sewu Waterfall, the Magical Forest of Djawatan, and Lovina Dolphin Beach. In the future, our target is to offer tour packages to Komodo Island.</p>
-          
-          <p>For tour package prices, we offer very reasonable rates and it is best to discuss further when you have a combination of the Mount Bromo package with other tourist attractions. Our offers on this website are for standard tour classes. For economical or exclusive packages or if you have any other questions, you can contact us via WhatsApp, WeChat, social media private messages, or email.</p>
+          <p>
+            We are a new tour & travel company established in 2024. Our home
+            base is located in Probolinggo, East Java, as this is where we grew
+            up and it is very close to the famous volcanic tourist attraction,
+            Mount Bromo.
+          </p>
+
+          <p>
+            Although our company is relatively young, our mentors are highly
+            experienced individuals in the fields of transportation,
+            hospitality, and travel management. On average, our mentors have
+            been involved in the travel industry for over 15 years. Some of us
+            are the second generation of our senior mentors.
+          </p>
+
+          <p>
+            Currently, we operate tour packages to Yogyakarta (Borobudur,
+            Prambanan, Jomblang Cave, Ijo Temple, etc.), Mount Bromo, Mount
+            Ijen, Tumpak Sewu Waterfall, the Magical Forest of Djawatan, and
+            Lovina Dolphin Beach. In the future, our target is to offer tour
+            packages to Komodo Island.
+          </p>
+
+          <p>
+            For tour package prices, we offer very reasonable rates and it is
+            best to discuss further when you have a combination of the Mount
+            Bromo package with other tourist attractions. Our offers on this
+            website are for standard tour classes. For economical or exclusive
+            packages or if you have any other questions, you can contact us via
+            WhatsApp, WeChat, social media private messages, or email.
+          </p>
         </div>
       </div>
     </div>
-    
+
     <!-- How to Find Us -->
-    <div class="max-w-6xl mx-auto mt-24">
-      <h3 class="text-2xl font-semibold mb-8">How to Find Us</h3>
-      
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <!-- Map placeholder (you can replace with an actual map) -->
-        <div class="bg-gray-100 h-80">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.4349113741896!2d113.21332277575787!3d-7.743607776768138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7adee168f6749%3A0xd18183f3db6edcc2!2sAlun-Alun%20Kota%20Probolinggo!5e0!3m2!1sen!2sus!4v1742331135502!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        
-        <!-- Directions -->
-        <div>
-          <h4 class="text-xl font-medium mb-6">Our meeting point is Alun - Alun Kota Probolinggo (Town Square)</h4>
-          <ol class="space-y-3 text-gray-600 list-decimal list-outside pl-5">
-            <li>Head east towards Pasar Mangunharjo (many people refer this market as Pasar Babian)</li>
-            <li>Continue east until you reach an intersection</li>
-            <li>Please turn left, then now you are in the Arum Permai Residential Area</li>
-            <li>Continue north</li>
-            <li>You will find a second intersection</li>
-            <li>Please turn left into a dead-end alley</li>
-            <li>Our location is on the right, two houses after the dead-end intersection</li>
-          </ol>
-          
-          <div class="mt-8 py-4 px-6 bg-[#F68712]/5">
-            <p class="text-gray-700">
-              <span class="font-medium">Alternatively:</span> Please contact us via WhatsApp or WeChat number. We are always ready to assist you.
-            </p>
+    <div class="max-w-6xl mx-auto mt-16">
+      <div class="bg-white p-6 border border-gray-200">
+        <h3 class="text-2xl font-semibold mb-6 pb-2 border-b border-gray-100">
+          How to Find Us
+        </h3>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Map container -->
+          <div class="w-full h-80 border border-gray-100 overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.425432346856!2d113.22588061131722!3d-7.744617976747586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7adc81d781a1d%3A0x350c22b6faee973a!2sJl.%20Yos%20Sudarso%20B%20No.28b%2C%20Mangunharjo%2C%20Kec.%20Mayangan%2C%20Kota%20Probolinggo%2C%20Jawa%20Timur%2067217%2C%20Indonesia!5e0!3m2!1sen!2sus!4v1743121096295!5m2!1sen!2sus"
+              width="100%"
+              height="100%"
+              style="border:0;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Bromo Tour Office Location in Probolinggo, East Java"
+            ></iframe>
+          </div>
+
+          <!-- Directions -->
+          <div>
+            <!-- Add address display here -->
+            <div
+              class="flex items-start mb-5 bg-white border border-gray-100 p-4"
+            >
+              <div
+                class="flex-shrink-0 h-10 w-10 flex items-center justify-center bg-[#20513F] text-white mr-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="w-5 h-5"
+                >
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                  ></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <h5 class="font-medium text-gray-900 mb-1">
+                  Our Home Address:
+                </h5>
+                <p class="text-gray-600">
+                  Jl. Yos Sudarso B No.28b, Mangunharjo, Kec. Mayangan, Kota
+                  Probolinggo, Jawa Timur 67217
+                </p>
+              </div>
+            </div>
+            <ol
+              class="space-y-2 text-gray-600 list-decimal list-outside pl-5 my-6 ml-6 [&>li]:mt-2"
+            >
+              <li>
+                Head east towards Pasar Mangunharjo (many people refer this
+                market as Pasar Babian)
+              </li>
+              <li>Continue east until you reach an intersection</li>
+              <li>
+                Please turn left, then now you are in the Arum Permai
+                Residential Area
+              </li>
+              <li>Continue north</li>
+              <li>You will find a second intersection</li>
+              <li>Please turn left into a dead-end alley</li>
+              <li>
+                Our location is on the right, two houses after the dead-end
+                intersection
+              </li>
+            </ol>
+
+            <div class="mt-6 p-4 border border-[#F68712]/20 bg-white">
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 h-10 w-10 flex items-center justify-center bg-[#F68712] text-white mr-4"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-5 h-5"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-gray-700">
+                    <span class="font-medium">Alternatively:</span> Please contact
+                    us via WhatsApp or WeChat. We are always ready to assist you
+                    with directions.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

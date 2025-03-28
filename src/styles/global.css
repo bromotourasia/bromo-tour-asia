@@ -1,8 +1,8 @@
-@import 'tailwindcss';
-@import '@fontsource-variable/plus-jakarta-sans';
+@import "tailwindcss";
+@import "@fontsource-variable/plus-jakarta-sans";
 
 @theme {
-  --font-sans: 'Plus Jakarta Sans Variable', 'sans-serif';
+  --font-sans: "Plus Jakarta Sans Variable", "sans-serif";
 }
 
 @plugin 'tailwindcss-animate';

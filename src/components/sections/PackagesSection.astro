@@ -1,115 +1,235 @@
 ---
 import { Button } from "@/components/ui/button";
+import { CldImage } from "astro-cloudinary";
 
 // Sample tour package data
 const packages = [
   {
     id: 1,
     title: "Bromo Sunrise Tour",
-    description: "Experience the breathtaking sunrise over Mount Bromo with this popular 2 Days 1 Night tour package.",
+    description:
+      "Experience the breathtaking sunrise over Mount Bromo with this popular 2 Days 1 Night tour package.",
     price: "Rp 700K",
     duration: "2 Days / 1 Night",
-    features: ["Transport service", "Jeep ride", "Local guide", "1 Night hotel", "Breakfast"],
-    image: "/images/bromo-sunrise.jpg"
+    features: [
+      "Transport service",
+      "Jeep ride",
+      "Local guide",
+      "1 Night hotel",
+      "Breakfast",
+    ],
+    cloudinaryId: "takashi-miyazaki-_vpeB_hEtSg-unsplash_myitie", // Cloudinary folder/image ID
+    alt: "Breathtaking sunrise over Mount Bromo",
   },
   {
     id: 2,
     title: "Bromo & Ijen Crater",
-    description: "Combine the beauty of Mount Bromo with the stunning blue flames of Ijen Crater in this 3 Days 2 Nights adventure.",
+    description:
+      "Combine the beauty of Mount Bromo with the stunning blue flames of Ijen Crater in this 3 Days 2 Nights adventure.",
     price: "Rp 1,150K",
     duration: "3 Days / 2 Night",
-    features: ["Transport service", "Jeep ride", "Local guide", "1 Night hotel Surabaya","1 Night hotel Ijen ", "2x Breakfast"],
-    image: "/images/bromo-ijen.jpg"
+    features: [
+      "Transport service",
+      "Jeep ride",
+      "Local guide",
+      "1 Night hotel Surabaya",
+      "1 Night hotel Ijen ",
+      "2x Breakfast",
+    ],
+    cloudinaryId: "dea-febriano-yuvica-JrsgbeaCeew-unsplash_kxt6pr", // Cloudinary folder/image ID
+    alt: "Mount Bromo and stunning blue flames of Ijen Crater",
   },
   {
     id: 3,
     title: "Bromo & Sewu Waterfall",
-    description: "Visit Mount Bromo and the magnificent Tumpak Sewu waterfall on this comprehensive tour package.",
+    description:
+      "Visit Mount Bromo and the magnificent Tumpak Sewu waterfall on this comprehensive tour package.",
     price: "Rp 1,150K",
     duration: "3 Days / 2 Nights",
-    features: ["Transport service", "Jeep ride", "Local guide", "1 Night hotel Tumpak Sewu","1 Night hotel Surabaya ", "2x Breakfast"],
-    image: "/images/tumpak-sewu.jpg"
+    features: [
+      "Transport service",
+      "Jeep ride",
+      "Local guide",
+      "1 Night hotel Tumpak Sewu",
+      "1 Night hotel Surabaya ",
+      "2x Breakfast",
+    ],
+    cloudinaryId: "timur-kozmenko-tA5sd0WIARQ-unsplash_yr4wvb", // Cloudinary folder/image ID
+    alt: "Mount Bromo and magnificent Tumpak Sewu waterfall",
   },
   {
     id: 4,
     title: "Complete East Java Tour",
-    description: "Explore all the highlights of East Java including Bromo, Ijen, and Malang city in this extensive tour.",
+    description:
+      "Explore all the highlights of East Java including Bromo, Ijen, and Malang city in this extensive tour.",
     price: "Rp 1,500K",
     duration: "4 Days / 3 Nights",
-    features: ["All transportation", "Hotel stays", "Daily breakfast", "Entrance fees"],
-    image: "/images/east-java.jpg"
+    features: [
+      "All transportation",
+      "Hotel stays",
+      "Daily breakfast",
+      "Entrance fees",
+    ],
+    cloudinaryId: "rolands-varsbergs-cVFjQGaU9DI-unsplash_yzs0de", // Cloudinary folder/image ID
+    alt: "Highlights of East Java including Bromo, Ijen, and Malang city",
   },
   {
     id: 5,
-    title: "Yogyakarta Tour (New)",
-    description: "Discover the cultural heart of Java with visits to UNESCO World Heritage sites Borobudur and Prambanan temples, explore Sultan Palace, and experience the vibrant atmosphere of Malioboro Street.",
-    price: "-",
+    title: "Yogyakarta Tour",
+    description:
+      "Discover the cultural heart of Java with visits to UNESCO World Heritage sites Borobudur and Prambanan temples, explore Sultan Palace, and experience the vibrant atmosphere of Malioboro Street.",
+    price: "Rp 1,150K",
     duration: "-",
-    features: ["All transportation", "Hotel stays", "Daily breakfast", "Entrance fees"],
-    image: "/images/east-java.jpg"
-  }
+    features: [
+      "All transportation",
+      "Hotel stays",
+      "Daily breakfast",
+      "Entrance fees",
+    ],
+    cloudinaryId: "roman-kirienko-1L7NYIltBqc-unsplash_ncugoh", // Cloudinary folder/image ID
+    alt: "Cultural heart of Java with Borobudur and Prambanan temples",
+  },
+  {
+    id: 6,
+    title: "Bali Tour",
+    description:
+      "Experience the paradise island of Bali with visits to stunning beaches, ancient temples, lush rice terraces, and vibrant cultural attractions in Ubud and other popular destinations.",
+    price: "Rp 1,500K",
+    duration: "-",
+    features: [
+      "All transportation",
+      "Hotel stays",
+      "Daily breakfast",
+      "Entrance fees",
+    ],
+    cloudinaryId: "alfiano-sutianto-exFdOWkYBQw-unsplash_m1c6ii", // Cloudinary folder/image ID
+    alt: "Paradise island of Bali with beaches, temples and rice terraces",
+  },
 ];
 ---
 
-<section id="packages" class="bg-[#20513F] text-white py-20" aria-label="Tour Packages">
+<section
+  id="packages"
+  class="bg-[#20513F] text-white py-20"
+  aria-label="Tour Packages"
+>
   <div class="container mx-auto px-4">
     <div class="max-w-2xl mx-auto text-center mb-12 lg:mb-16">
-      <p class="inline-block px-3 py-1 text-[#F68712] font-light mb-2 border border-[#F68712] rounded-full bg-white/10">
+      <p
+        class="inline-block px-3 py-1 text-[#F68712] font-light mb-2 border border-[#F68712] rounded-full bg-white/10"
+      >
         Our Tour Packages
       </p>
-      <h2 class="text-4xl md:text-5xl font-semibold mb-6">
-        Unforgettable Bromo Experiences
+
+      <h2 class="text-4xl py-3 md:text-5xl font-semibold mb-6">
+        Explore Indonesia with Us
       </h2>
       <p class="text-lg font-light text-white/80">
-        Choose from our carefully crafted tour packages designed to showcase the best of Bromo and East Java
+        Discover the best of Bromo, East Java, Yogyakarta, and Bali with our
+        carefully planned tour packages. Let us take care of everything while
+        you enjoy the adventure.
       </p>
     </div>
 
     <!-- Package Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      {packages.map(pkg => (
-        <div class="bg-white text-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform hover:scale-105">
-          <div class="h-48 bg-gray-200 relative overflow-hidden">
-            <div class="absolute inset-0 bg-gray-400 flex items-center justify-center">
-              <p class="text-xs">Package Image</p>
-            </div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold mb-2 text-[#20513F]">{pkg.title}</h3>
-            <p class="text-sm text-gray-600 mb-4">{pkg.description}</p>
-            <div class="flex justify-between items-center mb-4">
-              <div>
-                <p class="text-xs text-gray-500">Starting from</p>
-                <p class="text-xl font-bold text-[#F68712]">{pkg.price}</p>
-              </div>
-              <div class="px-3 py-1 bg-[#20513F]/10 text-[#20513F] text-xs rounded-full">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        packages.map((pkg) => (
+          <div class="bg-white text-gray-800 rounded-md border border-gray-100 overflow-hidden">
+            <div class="h-52 relative overflow-hidden">
+              <CldImage
+                src={pkg.cloudinaryId}
+                alt={pkg.alt || pkg.title}
+                class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                loading="lazy"
+                quality={80}
+                gravity="auto"
+                crop="fill"
+              />
+              <div class="absolute top-3 right-3 px-3 py-1 bg-[#F68712] text-white text-xs font-medium rounded-sm">
                 {pkg.duration}
               </div>
             </div>
-            <ul class="text-sm text-gray-600 mb-6">
-              {pkg.features.map(feature => (
-                <li class="flex items-center gap-2 mb-2">
-                  <svg class="w-4 h-4 text-[#F68712]" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                  </svg>
-                  {feature}
-                </li>
-              ))}
-            </ul>
-            <Button className="w-full bg-[#F68712] hover:bg-[#F68712]/90 text-white">
-              View Details
-            </Button>
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-3 text-[#20513F]">{pkg.title}</h3>
+              <p class="text-sm text-gray-600 mb-5 leading-relaxed">
+                {pkg.description}
+              </p>
+
+              <div class="mb-5">
+                <p class="text-xs uppercase tracking-wider text-gray-500 mb-1">
+                  Starting from
+                </p>
+                <p class="text-2xl font-bold text-[#F68712]">{pkg.price}</p>
+              </div>
+
+              <div class="border-t border-gray-100 pt-4 mb-5">
+                <p class="text-xs uppercase tracking-wider text-gray-500 mb-3">
+                  Included in package
+                </p>
+                <ul class="text-sm text-gray-600 grid grid-cols-1 gap-2">
+                  {pkg.features.map((feature) => (
+                    <li class="flex items-center gap-2">
+                      <span class="w-4 h-4 bg-[#F68712] rounded-sm flex items-center justify-center flex-shrink-0">
+                        <svg
+                          class="w-3 h-3 text-white"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
+                        </svg>
+                      </span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <Button className="w-full bg-[#20513F] hover:bg-[#20513F]/90 text-white border-none">
+                View Details
+              </Button>
+            </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
-    
+
     <!-- CTA -->
-    <div class="text-center mt-12">
-      <p class="text-lg mb-6">Can't find what you're looking for? We offer customizable packages too!</p>
-      <Button className="bg-white text-[#20513F] hover:bg-white/90" size="lg">
-        Contact Us for Custom Tour
-      </Button>
+    <div
+      class="mt-16 md:mt-20 bg-[#F68712]/10 rounded-lg py-8 px-6 md:py-12 md:px-10 max-w-4xl mx-auto"
+    >
+      <div class="text-center">
+        <h3 class="text-2xl md:text-3xl font-medium text-white mb-3">
+          Looking for something special?
+        </h3>
+        <p
+          class="text-base md:text-lg text-white/80 mb-6 md:mb-8 max-w-2xl mx-auto"
+        >
+          Can't find what you're looking for? We offer customizable packages
+          tailored to your preferences!
+        </p>
+        <Button
+          className="group bg-white text-[#20513F] hover:bg-white/95 shadow-sm transition-all duration-300 font-medium px-5 py-2 md:px-8 md:py-6 md:text-lg rounded-md flex items-center gap-2 mx-auto"
+          size="lg"
+        >
+          <span>Contact Us for Custom Tour</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="transform transition-transform duration-300 group-hover:translate-x-1"
+          >
+            <path d="M5 12h14"></path>
+            <path d="m12 5 7 7-7 7"></path>
+          </svg>
+        </Button>
+      </div>
     </div>
   </div>
 </section>

@@ -1,68 +1,160 @@
 ---
-import '../styles/global.css';
-import Navbar from '@/components/layout/Navbar.astro';
-import Footer from '@/components/layout/Footer.astro';
+import "../styles/global.css";
+import Navbar from "@/components/layout/Navbar.astro";
+import Footer from "@/components/layout/Footer.astro";
+import { SEO } from "astro-seo";
 
-const { title = "Bromo Tour - Your adventure awaits", isErrorPage = false } = Astro.props;
+const { title = "Bromo Tour - Tour & Travel Services", isErrorPage = false } =
+  Astro.props;
+
+const seoData = {
+  title: title,
+  description:
+    "Explore Bromo, Tumpak Sewu, Yogyakarta, and Bali with our expert local guides.",
+  openGraph: {
+    basic: {
+      title: "Bromo Tour – Your Trusted Travel Partner in Indonesia",
+      type: "website",
+      image: "https://bromotour.asia/images/logo.png",
+    },
+    optional: {
+      description:
+        "Discover the beauty of Mount Bromo, Tumpak Sewu, Yogyakarta, and Bali with expert local guides. Book your unforgettable adventure today!",
+      url: "https://bromotour.asia",
+    },
+  },
+  extend: {
+    meta: [
+      {
+        name: "keywords",
+        content:
+          "Bromo tour, Indonesia travel, Yogyakarta tour, Bali tour, Tumpak Sewu waterfall, Mount Bromo, Ijen crater, guided tours Indonesia, adventure travel Indonesia, best Indonesia tours",
+      },
+    ],
+  },
+};
+
+// JSON-LD for the Travel Agency information
+const travelAgencyStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  name: "Bromo Tour",
+  description:
+    "Premium tour packages for Mount Bromo, Ijen, and other popular destinations in East Java, Indonesia.",
+  image: "https://bromotour.asia/images/logo.png",
+  url: "https://bromotour.asia",
+  telephone: "+6285707307178",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Jl. Yos Sudarso B No.28b",
+    addressLocality: "Kota Probolinggo",
+    addressRegion: "East Java",
+    postalCode: "67217",
+    addressCountry: "ID",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "-7.744495720567781",
+    longitude: "113.22846089615636",
+  },
+  areaServed: [
+    "Mount Bromo",
+    "Ijen Crater",
+    "Tumpak Sewu",
+    "Yogyakarta",
+    "Bali",
+  ],
+  priceRange: "$$-$$$",
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ],
+    opens: "08:00",
+    closes: "18:00",
+  },
+};
+
+// JSON-LD for the single page structure with multiple sections
+const pageStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Bromo Tour - Tour & Travel Services",
+  url: "https://bromotour.asia",
+  description:
+    "Indonesia Tour & Travel Services with Trusted Local Guides. We’re here to lead, guide, and take you through the iconic landscapes of Bromo, the awe-inspiring Tumpak Sewu Waterfall, the vibrant culture of Yogyakarta, and the serene beauty of Bali.",
+  hasPart: [
+    {
+      "@type": "WebPageElement",
+      name: "Home Section",
+      cssSelector: "#home",
+    },
+    {
+      "@type": "WebPageElement",
+      name: "Packages Section",
+      cssSelector: "#packages",
+    },
+    {
+      "@type": "WebPageElement",
+      name: "Gallery Section",
+      cssSelector: "#gallery",
+    },
+    {
+      "@type": "WebPageElement",
+      name: "Testimonial Section",
+      cssSelector: "#testimonials",
+    },
+    {
+      "@type": "WebPageElement",
+      name: "Terms Section",
+      cssSelector: "#terms",
+    },
+    {
+      "@type": "WebPageElement",
+      name: "Contact Section",
+      cssSelector: "#contact",
+    },
+  ],
+};
 ---
 
 <html lang="en" class="overflow-x-hidden">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-        <link rel="icon" type="image/svg+xml" href="images/logobromo.svg" />
-        <meta name="generator" content={Astro.generator} />
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="generator" content={Astro.generator} />
 
-        <!-- seo -->
-        <meta name="description" content="Experience breathtaking Mount Bromo tours, Ijen Crater adventures, and Tumpak Sewu excursions with our expert guides. Book your East Java adventure today!">
-        <meta name="keywords" content="Mount Bromo, Bromo tour, Ijen Crater, Tumpak Sewu waterfall, East Java tourism, Bromo Tour Asia">
-        <meta property="og:title" content="Bromo Tour - Your East Java Adventure Awaits">
-        <meta property="og:description" content="Premium tour packages for Mount Bromo, Ijen Crater, and other spectacular destinations in East Java, Indonesia.">
-        <meta property="og:image" content="https://bromotour.asia/path/to/og-image.jpg">
-        <meta property="og:url" content="https://bromotour.asia">
-        <meta name="twitter:card" content="summary_large_image">
+    <!-- SEO using astro-seo component -->
+    <SEO {...seoData} />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(travelAgencyStructuredData)}
+    />
 
-        <title>{title}</title>
-        
-        <!-- JSON-LD Structured Data -->
-        <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "TravelAgency",
-            "name": "Bromo Tour",
-            "description": "Premium tour packages for Mount Bromo, Ijen, and other popular destinations in East Java, Indonesia.",
-            "image": "https://bromotour.asia/images/logobromo.svg",
-            "url": "https://bromotour.asia",
-            "telephone": "+6285721791403",
-            "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "Jl. Yos Sudarso B No.28b",
-                "addressLocality": "Kota Probolinggo",
-                "addressRegion": "East Java",
-                "postalCode": "67217",
-                "addressCountry": "ID"
-            },
-            "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": "-7.744495720567781",
-                "longitude": "113.22846089615636"
-            },
-            "areaServed": ["Mount Bromo", "Ijen Crater", "Tumpak Sewu", "Lovina Beach"],
-            "priceRange": "$$-$$$",
-            "openingHoursSpecification": {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                "opens": "08:00",
-                "closes": "18:00"
-            }
-        }
-        </script>
-    </head>
-    <body class="overflow-x-hidden">
-        <Navbar isNotHomePage={isErrorPage} />
-        <main class="overflow-x-hidden">
-            <slot />
-        </main>
-        <Footer />
-    </body>
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(pageStructuredData)}
+    />
+
+    <title>{title}</title>
+  </head>
+
+  <body class="overflow-x-hidden">
+    <Navbar isNotHomePage={isErrorPage} />
+    <main class="overflow-x-hidden">
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>
