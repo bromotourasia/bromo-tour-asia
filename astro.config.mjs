@@ -6,12 +6,17 @@ import react from "@astrojs/react";
 
 import sitemap from "@astrojs/sitemap";
 
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://bromotour.asia",
+
   vite: {
     plugins: [tailwindcss()],
   },
 
   integrations: [react(), sitemap()],
+  output: 'server',
+  adapter: cloudflare(),
 });
