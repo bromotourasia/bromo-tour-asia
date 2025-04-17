@@ -6,63 +6,69 @@ import { CldImage } from "astro-cloudinary";
 const packages = [
   {
     id: 1,
-    title: "Bromo Sunrise Tour",
+    title: "3D2N BROMO – IJEN TOUR PACKAGE",
     description:
-      "Experience the breathtaking sunrise over Mount Bromo with this popular 2 Days 1 Night tour package.",
-    price: "Rp 700K",
-    duration: "2 Days / 1 Night",
+      "Experience the breathtaking sunrise over Mount Bromo and the stunning blue flames of Ijen Crater in this comprehensive 3 Days 2 Nights tour package.",
+    price: "From Rp 1,400K/person",
+    duration: "3 Days / 2 Nights",
     features: [
-      "Transport service",
-      "Jeep ride",
-      "Local guide",
-      "1 Night hotel",
-      "Breakfast",
+      "Transport service for 3 Days",
+      "Jeep Bromo Tour",
+      "Local guide for Bromo and Ijen",
+      "Entrance tickets",
+      "2 Nights homestay",
+      "2x Breakfast",
+      "Mineral water",
+      "Insurance & Gas Mask for Ijen",
     ],
     cloudinaryId: "takashi-miyazaki-_vpeB_hEtSg-unsplash_myitie", // Cloudinary folder/image ID
     alt: "Breathtaking sunrise over Mount Bromo",
   },
   {
     id: 2,
-    title: "Bromo & Ijen Crater",
+    title: "3D2N BROMO – TUMPAK SEWU TOUR PACKAGE",
     description:
-      "Combine the beauty of Mount Bromo with the stunning blue flames of Ijen Crater in this 3 Days 2 Nights adventure.",
-    price: "Rp 1,150K",
-    duration: "3 Days / 2 Night",
+      "Experience the magnificent Mount Bromo sunrise and the stunning Tumpak Sewu Waterfall in this comprehensive 3 Days 2 Nights adventure.",
+    price: "From Rp 1,350K/person",
+    duration: "3 Days / 2 Nights",
     features: [
-      "Transport service",
-      "Jeep ride",
-      "Local guide",
-      "1 Night hotel Surabaya",
-      "1 Night hotel Ijen ",
+      "Transport service for 3 Days",
+      "Jeep Bromo Tour",
+      "Local guide for Bromo and Sewu",
+      "Entrance tickets",
+      "2 Nights homestay",
       "2x Breakfast",
+      "Mineral water",
     ],
     cloudinaryId: "dea-febriano-yuvica-JrsgbeaCeew-unsplash_kxt6pr", // Cloudinary folder/image ID
-    alt: "Mount Bromo and stunning blue flames of Ijen Crater",
+    alt: "Mount Bromo sunrise and Tumpak Sewu Waterfall tour",
   },
   {
     id: 3,
-    title: "Bromo & Sewu Waterfall",
+    title: "4D3N BROMO – TUMPAK SEWU – IJEN – DROP KETAPANG PORT",
     description:
-      "Visit Mount Bromo and the magnificent Tumpak Sewu waterfall on this comprehensive tour package.",
-    price: "Rp 1,150K",
-    duration: "3 Days / 2 Nights",
+      "Experience the complete East Java adventure with this comprehensive tour, visiting Mount Bromo, Tumpak Sewu Waterfall, and Ijen Crater before connecting to Bali.",
+    price: "From Rp 1,900K/person",
+    duration: "4 Days / 3 Nights",
     features: [
-      "Transport service",
-      "Jeep ride",
-      "Local guide",
-      "1 Night hotel Tumpak Sewu",
-      "1 Night hotel Surabaya ",
-      "2x Breakfast",
+      "Transport service for 4 Days",
+      "Jeep Bromo Tour",
+      "Local guides for all sites",
+      "3 Nights homestay",
+      "Entrance tickets",
+      "3x Breakfast",
+      "Insurance & Gas Mask for Ijen",
+      "Mineral water",
     ],
     cloudinaryId: "timur-kozmenko-tA5sd0WIARQ-unsplash_yr4wvb", // Cloudinary folder/image ID
-    alt: "Mount Bromo and magnificent Tumpak Sewu waterfall",
+    alt: "Complete East Java tour with Bromo, Tumpak Sewu and Ijen Crater",
   },
   {
     id: 4,
     title: "Complete East Java Tour",
     description:
       "Explore all the highlights of East Java including Bromo, Ijen, and Malang city in this extensive tour.",
-    price: "Rp 1,500K",
+    price: "Rp. -",
     duration: "4 Days / 3 Nights",
     features: [
       "All transportation",
@@ -78,7 +84,7 @@ const packages = [
     title: "Yogyakarta Tour",
     description:
       "Discover the cultural heart of Java with visits to UNESCO World Heritage sites Borobudur and Prambanan temples, explore Sultan Palace, and experience the vibrant atmosphere of Malioboro Street.",
-    price: "Rp 1,150K",
+    price: "Rp. -",
     duration: "-",
     features: [
       "All transportation",
@@ -94,7 +100,7 @@ const packages = [
     title: "Bali Tour",
     description:
       "Experience the paradise island of Bali with visits to stunning beaches, ancient temples, lush rice terraces, and vibrant cultural attractions in Ubud and other popular destinations.",
-    price: "Rp 1,500K",
+    price: "Rp. -",
     duration: "-",
     features: [
       "All transportation",
@@ -135,7 +141,7 @@ const packages = [
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {
         packages.map((pkg) => (
-          <div class="bg-white text-gray-800 rounded-md border border-gray-100 overflow-hidden">
+          <div class="bg-white text-gray-800 rounded-md border border-gray-100 overflow-hidden package-card">
             <div class="h-52 relative overflow-hidden">
               <CldImage
                 src={pkg.cloudinaryId}
@@ -150,44 +156,402 @@ const packages = [
                 {pkg.duration}
               </div>
             </div>
+            
             <div class="p-6">
               <h3 class="text-xl font-bold mb-3 text-[#20513F]">{pkg.title}</h3>
               <p class="text-sm text-gray-600 mb-5 leading-relaxed">
                 {pkg.description}
               </p>
+      
+              {pkg.id <= 3 ? (
+                <>
+                  <div class="mb-5">
+                    <p class="text-2xl font-bold text-[#F68712]">{pkg.price}</p>
+                  </div>
+          
+                  <div class="border-t border-gray-100 pt-4 mb-5">
+                    <p class="text-xs uppercase tracking-wider text-gray-500 mb-3">
+                      Included in package
+                    </p>
+                    <ul class="text-sm text-gray-600 grid grid-cols-1 gap-2">
+                      {pkg.features.map((feature) => (
+                        <li class="flex items-center gap-2">
+                          <span class="w-4 h-4 bg-[#F68712] rounded-sm flex items-center justify-center flex-shrink-0">
+                            <svg
+                              class="w-3 h-3 text-white"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                            >
+                              <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
+                            </svg>
+                          </span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </>
+              ) : (
+                <div class="mb-5 mt-2">
+                  <div class="text-center py-3">
+                    <div class="inline-block bg-yellow-100 border border-yellow-400 text-yellow-800 px-4 py-2 rounded-md mb-4">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 inline-block mr-1 mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                      </svg>
+                      <span class="font-semibold">Package Under Construction</span>
+                    </div>
+                    <p class="text-gray-600 mb-2">
+                      We're currently finalizing the details for this package. 
+                      <strong>Coming Soon!</strong>
+                    </p>
+                  </div>
+                </div>
+              )}
+      
+              <button 
+                class={`w-full text-white border-none py-3 rounded-md text-center font-medium transition-colors duration-300 ${pkg.id <= 3 ? 'view-details-btn bg-[#20513F] hover:bg-[#20513F]/90' : 'bg-gray-400 cursor-not-allowed'}`}
+                data-package-id={pkg.id}
+                disabled={pkg.id > 3}
+              >
+                {pkg.id <= 3 ? 'View Details' : 'Coming Soon'}
+              </button>
+              
+              <!-- Hidden content for modal - this won't be displayed directly -->
+              <div class="package-details-content hidden">
+                <h4 class="text-lg font-semibold mb-4 text-[#20513F]">Itinerary</h4>
+                
+                {pkg.id === 1 && (
+                  <>
+                    <!-- Package 1: 3D2N BROMO – IJEN TOUR PACKAGE -->
+                    <div class="mb-4">
+                      <h5 class="font-medium text-[#20513F]">Day 1: SURABAYA – BROMO</h5>
+                      <ul class="text-sm text-gray-600 ml-5 mt-2 space-y-1 list-disc">
+                        <li>Pick up from Surabaya Airport upon your arrival</li>
+                        <li>Transfer to Bromo area (approx. 3 hours drive)</li>
+                        <li>Check in at homestay in Bromo (Celina/Family/Mantep Homestay or similar)</li>
+                        <li>Free time to rest</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="mb-4">
+                      <h5 class="font-medium text-[#20513F]">Day 2: BROMO TOUR – IJEN</h5>
+                      <ul class="text-sm text-gray-600 ml-5 mt-2 space-y-1 list-disc">
+                        <li>Early morning wake-up (2:00 AM)</li>
+                        <li>Jeep 4WD pick-up from hotel (2:30 AM)</li>
+                        <li>Visit Penanjakan Peak/Kingkong Hill/Prau Hill for sunrise viewpoint</li>
+                        <li>Witness spectacular sunrise around 5:10 AM</li>
+                        <li>Visit Mount Bromo crater</li>
+                        <li>Return to hotel for breakfast and checkout</li>
+                        <li>Transfer to Ijen area (approx. 6 hours)</li>
+                        <li>Check in at homestay in Ijen (Catimor/Arabica/Ijen Bondowoso or similar)</li>
+                        <li>Free time to rest</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="mb-4">
+                      <h5 class="font-medium text-[#20513F]">Day 3: IJEN TOUR – KETAPANG PORT</h5>
+                      <ul class="text-sm text-gray-600 ml-5 mt-2 space-y-1 list-disc">
+                        <li>Early morning checkout (1:00 AM)</li>
+                        <li>Transfer to Paltuding (starting point for Ijen trekking)</li>
+                        <li>Hike Mount Ijen for approximately 2 hours</li>
+                        <li>Experience the famous Blue Fire (when available)</li>
+                        <li>Enjoy the sunrise and view of blue-green Ijen Lake</li>
+                        <li>Observe the traditional sulfur miners at work</li>
+                        <li>Trek back down to Paltuding (approx. 1.5 hours)</li>
+                        <li>Transfer to Ketapang Port (for connections to Bali)</li>
+                        <li>End of tour services</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md mb-4">
+                      <h5 class="font-medium text-[#20513F] mb-2">Tour Package Includes</h5>
+                      <ul class="text-sm text-gray-600 space-y-1 list-disc ml-5">
+                        <li>Transport service for 3 Days (car, driver, petrol, toll and parking fees)</li>
+                        <li>Jeep Bromo Tour (shared jeep for 2 persons, no Bromo guide for 2 persons)</li>
+                        <li>Local guide for Bromo and Ijen</li>
+                        <li>Mineral water</li>
+                        <li>1 night homestay in Ijen with breakfast, hot water, and air conditioning</li>
+                        <li>1 night homestay in Bromo with breakfast and hot water</li>
+                        <li>Entrance tickets for Mount Bromo and Mount Ijen</li>
+                        <li>Medical report, Insurance and Gas Mask for Ijen</li>
+                        <li>2x breakfast</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md mb-4">
+                      <h5 class="font-medium text-[#20513F] mb-2">Tour Excludes</h5>
+                      <ul class="text-sm text-gray-600 space-y-1 list-disc ml-5">
+                        <li>Lunch and dinner</li>
+                        <li>Riding horse in Mount Bromo</li>
+                        <li>Travel insurance</li>
+                        <li>Personal expenses</li>
+                        <li>Trolley in Ijen</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md mb-4">
+                      <h5 class="font-medium text-[#20513F] mb-2">Pricing (per person)</h5>
+                      <ul class="text-sm text-gray-600 space-y-1 ml-5">
+                        <li>2 person = Rp 2,200K / person</li>
+                        <li>3 person = Rp 1,850K / person</li>
+                        <li>4 person = Rp 1,800K / person</li>
+                        <li>5 person = Rp 1,750K / person</li>
+                        <li>6 person = Rp 1,700K / person</li>
+                        <li>7 person = Rp 1,650K / person</li>
+                        <li>8 person = Rp 1,550K / person</li>
+                        <li>9 person = Rp 1,450K / person</li>
+                        <li>10 person = Rp 1,400K / person</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md mb-4">
+                      <h5 class="font-medium text-[#20513F] mb-2">Important Notes</h5>
+                      <ul class="text-sm text-gray-600 space-y-2 ml-5 list-disc">
+                        <li>Payment: 50% before tour start, 50% before tour ends (Cash in IDR)</li>
+                        <li>For lunch and dinner, drivers will bring you to restaurants as per your request</li>
+                        <li>Prices valid for low and high season (May 1 - Sept 30, Dec 11-24) but not for peak season (Eid Mubarak, Christmas, New Year)</li>
+                        <li>For 2 persons, Jeep Bromo is shared with other tourists and no Bromo guide is provided</li>
+                        <li>Room arrangements vary based on group size</li>
+                      </ul>
+                    </div>
+                  </>
+                )}
+                
+                {pkg.id === 2 && (
+                  <>
+                    <!-- Package 2: 3D2N BROMO – TUMPAK SEWU TOUR PACKAGE -->
+                    <div class="mb-4">
+                      <h5 class="font-medium text-[#20513F]">Day 1: SURABAYA – BROMO</h5>
+                      <ul class="text-sm text-gray-600 ml-5 mt-2 space-y-1 list-disc">
+                        <li>Pick up from Surabaya Airport upon your arrival</li>
+                        <li>Transfer to Bromo area (approx. 3 hours drive)</li>
+                        <li>Check in at homestay in Bromo (Celina/Family/Mantep Homestay or similar)</li>
+                        <li>Free time to rest</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="mb-4">
+                      <h5 class="font-medium text-[#20513F]">Day 2: BROMO TOUR – TUMPAK SEWU</h5>
+                      <ul class="text-sm text-gray-600 ml-5 mt-2 space-y-1 list-disc">
+                        <li>Early morning wake-up (2:00 AM)</li>
+                        <li>Jeep 4WD pick-up from hotel (2:30 AM)</li>
+                        <li>Visit Penanjakan Peak/Kingkong Hill/Prau Hill for sunrise viewpoint</li>
+                        <li>Witness spectacular sunrise around 5:10 AM</li>
+                        <li>Visit Mount Bromo crater</li>
+                        <li>Return to hotel for breakfast and checkout (9:30 AM)</li>
+                        <li>Transfer to Tumpak Sewu area (approx. 4 hours)</li>
+                        <li>Check in at homestay in Tumpak Sewu (Yanto/Harmony/D'Rael Guesthouse or similar)</li>
+                        <li>Free time to rest</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="mb-4">
+                      <h5 class="font-medium text-[#20513F]">Day 3: TUMPAK SEWU WATERFALL TOUR – SURABAYA</h5>
+                      <ul class="text-sm text-gray-600 ml-5 mt-2 space-y-1 list-disc">
+                        <li>Breakfast at the homestay (6:00 AM)</li>
+                        <li>Brief meeting with local guide about the program (7:15 AM)</li>
+                        <li>Tumpak Sewu Waterfall Tour (7:30 AM - 11:00 AM)</li>
+                        <li>Visit Panorama Site, Tumpak Sewu Bottom Site, and Tetes Cave (Goa Tetes)</li>
+                        <li>Trek back to car parking area</li>
+                        <li>Return to homestay for shower and checkout</li>
+                        <li>Transfer back to Surabaya (approx. 4.5 hours)</li>
+                        <li>Drop off at hotel or airport</li>
+                        <li>End of tour services</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md mb-4">
+                      <h5 class="font-medium text-[#20513F] mb-2">Tour Package Includes</h5>
+                      <ul class="text-sm text-gray-600 space-y-1 list-disc ml-5">
+                        <li>Transport service for 3 Days (car, driver, petrol, toll and parking fees)</li>
+                        <li>Jeep Bromo Tour (shared jeep for 2 persons, no Bromo guide for 2 persons)</li>
+                        <li>Local guide for Bromo and Tumpak Sewu</li>
+                        <li>Mineral water</li>
+                        <li>1 night homestay in Tumpak Sewu with breakfast, hot water, and air conditioning</li>
+                        <li>1 night homestay in Bromo with breakfast and hot water</li>
+                        <li>Entrance tickets for Mount Bromo and Tumpak Sewu Waterfall</li>
+                        <li>2x breakfast</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md mb-4">
+                      <h5 class="font-medium text-[#20513F] mb-2">Tour Excludes</h5>
+                      <ul class="text-sm text-gray-600 space-y-1 list-disc ml-5">
+                        <li>Lunch and dinner</li>
+                        <li>Riding horse in Mount Bromo</li>
+                        <li>Travel insurance</li>
+                        <li>Personal expenses</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md mb-4">
+                      <h5 class="font-medium text-[#20513F] mb-2">Pricing (per person)</h5>
+                      <ul class="text-sm text-gray-600 space-y-1 ml-5">
+                        <li>2 person = Rp 2,100K / person</li>
+                        <li>3 person = Rp 1,800K / person</li>
+                        <li>4 person = Rp 1,700K / person</li>
+                        <li>5 person = Rp 1,650K / person</li>
+                        <li>6 person = Rp 1,600K / person</li>
+                        <li>7 person = Rp 1,550K / person</li>
+                        <li>8 person = Rp 1,450K / person</li>
+                        <li>9 person = Rp 1,400K / person</li>
+                        <li>10 person = Rp 1,350K / person</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md mb-4">
+                      <h5 class="font-medium text-[#20513F] mb-2">Important Notes</h5>
+                      <ul class="text-sm text-gray-600 space-y-2 ml-5 list-disc">
+                        <li>Payment: 50% before tour start, 50% before tour ends (Cash in IDR)</li>
+                        <li>For lunch and dinner, drivers will bring you to restaurants as per your request</li>
+                        <li>Prices valid for low and high season (May 1 - Sept 30, Dec 11-24) but not for peak season (Eid Mubarak, Christmas, New Year)</li>
+                        <li>For 2 persons, Jeep Bromo is shared with other tourists and no Bromo guide is provided</li>
+                        <li>Room arrangements vary based on group size</li>
+                      </ul>
+                    </div>
+                  </>
+                )}
+                
+                {pkg.id === 3 && (
+                  <>
+                    <!-- Package 3: 4D3N BROMO – TUMPAK SEWU – IJEN – DROP KETAPANG PORT -->
+                    <div class="mb-4">
+                      <h5 class="font-medium text-[#20513F]">Day 1: SURABAYA – BROMO</h5>
+                      <ul class="text-sm text-gray-600 ml-5 mt-2 space-y-1 list-disc">
+                        <li>Pick up from Surabaya Airport upon your arrival</li>
+                        <li>Transfer to Bromo area (approx. 3 hours drive)</li>
+                        <li>Check in at homestay in Bromo (Celina/Family/Mantep Homestay or similar)</li>
+                        <li>Free time to rest</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="mb-4">
+                      <h5 class="font-medium text-[#20513F]">Day 2: BROMO TOUR – TUMPAK SEWU</h5>
+                      <ul class="text-sm text-gray-600 ml-5 mt-2 space-y-1 list-disc">
+                        <li>Early morning wake-up (2:00 AM)</li>
+                        <li>Jeep 4WD pick-up from hotel (2:30 AM)</li>
+                        <li>Visit Penanjakan Peak/Kingkong Hill/Prau Hill for sunrise viewpoint</li>
+                        <li>Witness spectacular sunrise around 5:10 AM</li>
+                        <li>Visit Mount Bromo crater</li>
+                        <li>Return to hotel for breakfast and checkout (9:30 AM)</li>
+                        <li>Transfer to Tumpak Sewu area (approx. 4 hours)</li>
+                        <li>Check in at homestay in Tumpak Sewu (Yanto/Harmony/D'Rael Guesthouse or similar)</li>
+                        <li>Free time to rest</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="mb-4">
+                      <h5 class="font-medium text-[#20513F]">Day 3: TUMPAK SEWU WATERFALL TOUR – IJEN</h5>
+                      <ul class="text-sm text-gray-600 ml-5 mt-2 space-y-1 list-disc">
+                        <li>Breakfast at the homestay (6:00 AM)</li>
+                        <li>Brief meeting with local guide about the program (7:15 AM)</li>
+                        <li>Tumpak Sewu Waterfall Tour (7:30 AM - 10:30 AM)</li>
+                        <li>Visit Panorama Site, Tumpak Sewu Bottom Site, and Tetes Cave (Goa Tetes)</li>
+                        <li>Trek back to car parking area</li>
+                        <li>Return to homestay for shower and checkout</li>
+                        <li>Transfer to Ijen area (approx. 5.5 hours)</li>
+                        <li>Check in at homestay in Ijen (Catimor/Arabica/Ijen Bondowoso Homestay or similar)</li>
+                        <li>Free time to rest</li>
+                      </ul>
+                    </div>
 
-              <div class="mb-5">
-                <p class="text-xs uppercase tracking-wider text-gray-500 mb-1">
-                  Starting from
-                </p>
-                <p class="text-2xl font-bold text-[#F68712]">{pkg.price}</p>
+                    <div class="mb-4">
+                      <h5 class="font-medium text-[#20513F]">Day 4: IJEN TOUR – KETAPANG PORT (PORT TO BALI ISLAND)</h5>
+                      <ul class="text-sm text-gray-600 ml-5 mt-2 space-y-1 list-disc">
+                        <li>Early morning checkout (1:00 AM)</li>
+                        <li>Transfer to Paltuding (starting point for Ijen trekking)</li>
+                        <li>Hike Mount Ijen for approximately 2 hours</li>
+                        <li>Experience the famous Blue Fire (when available)</li>
+                        <li>Enjoy the sunrise and view of blue-green Ijen Lake</li>
+                        <li>Observe the traditional sulfur miners at work</li>
+                        <li>Trek back down to Paltuding (approx. 1.5 hours)</li>
+                        <li>Transfer to Ketapang Port (for connections to Bali)</li>
+                        <li>End of tour services</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md mb-4">
+                      <h5 class="font-medium text-[#20513F] mb-2">Tour Package Includes</h5>
+                      <ul class="text-sm text-gray-600 space-y-1 list-disc ml-5">
+                        <li>Transport service for 4 Days (car, driver, petrol, toll and parking fees)</li>
+                        <li>Jeep Bromo Tour (shared jeep for 2 persons, no Bromo guide for 2 persons)</li>
+                        <li>Local guides for Bromo, Tumpak Sewu, and Ijen</li>
+                        <li>Mineral water</li>
+                        <li>1 night homestay in Bromo with breakfast and hot water</li>
+                        <li>1 night homestay in Tumpak Sewu with breakfast, hot water, and air conditioning</li>
+                        <li>1 night homestay in Ijen with breakfast, hot water, and air conditioning</li>
+                        <li>Entrance tickets for Mount Bromo, Tumpak Sewu Waterfall, and Mount Ijen</li>
+                        <li>Medical report, Insurance and Gas Mask for Ijen</li>
+                        <li>3x breakfast</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md mb-4">
+                      <h5 class="font-medium text-[#20513F] mb-2">Tour Excludes</h5>
+                      <ul class="text-sm text-gray-600 space-y-1 list-disc ml-5">
+                        <li>Lunch and dinner</li>
+                        <li>Riding horse in Mount Bromo</li>
+                        <li>Travel insurance</li>
+                        <li>Personal expenses</li>
+                        <li>Trolley in Ijen (human pedicab)</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md mb-4">
+                      <h5 class="font-medium text-[#20513F] mb-2">Pricing (per person)</h5>
+                      <ul class="text-sm text-gray-600 space-y-1 ml-5">
+                        <li>2 person = Rp 2,950K / person</li>
+                        <li>3 person = Rp 2,400K / person</li>
+                        <li>4 person = Rp 2,350K / person</li>
+                        <li>5 person = Rp 2,300K / person</li>
+                        <li>6 person = Rp 2,250K / person</li>
+                        <li>7 person = Rp 2,150K / person</li>
+                        <li>8 person = Rp 2,050K / person</li>
+                        <li>9 person = Rp 1,950K / person</li>
+                        <li>10 person = Rp 1,900K / person</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md mb-4">
+                      <h5 class="font-medium text-[#20513F] mb-2">Important Notes</h5>
+                      <ul class="text-sm text-gray-600 space-y-2 ml-5 list-disc">
+                        <li>Payment: 50% before tour start, 50% before tour ends (Cash in IDR)</li>
+                        <li>For lunch and dinner, drivers will bring you to restaurants as per your request</li>
+                        <li>Prices valid for low and high season (May 1 - Sept 30, Dec 11-24) but not for peak season (Eid Mubarak, Christmas, New Year)</li>
+                        <li>For 2 persons, Jeep Bromo is shared with other tourists and no Bromo guide is provided</li>
+                        <li>Room arrangements vary based on group size</li>
+                      </ul>
+                    </div>
+                  </>
+                )}
+                
+                <div class="bg-gray-50 p-4 rounded-md mb-4">
+                  <h5 class="font-medium text-[#20513F] mb-2">Additional Information</h5>
+                  <ul class="text-sm text-gray-600 space-y-2">
+                    <li><span class="font-medium">What to bring:</span> Warm clothing, comfortable shoes, camera</li>
+                    <li><span class="font-medium">Difficulty level:</span> Easy to moderate</li>
+                    <li><span class="font-medium">Suitable for:</span> All ages (children under 5 not recommended for some activities)</li>
+                  </ul>
+                </div>
+                
+                <div class="mt-6 space-y-3">
+                  <a 
+                    href={`https://wa.me/6285707307178?text=Hello,%20I'm%20interested%20in%20booking%20the%20${encodeURIComponent(pkg.title)}%20package.`} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="block w-full bg-[#F68712] hover:bg-[#F68712]/90 text-white py-3 rounded-md text-center font-medium transition-colors duration-300"
+                  >
+                    Book Now via WhatsApp
+                  </a>
+                  
+                  <button
+                    type="button"
+                    class="contact-redirect-btn block w-full border border-[#20513F] text-[#20513F] hover:bg-[#20513F]/5 py-3 rounded-md text-center font-medium transition-colors duration-300"
+                  >
+                    Contact Us via Email or Phone
+                  </button>
+                </div>
               </div>
-
-              <div class="border-t border-gray-100 pt-4 mb-5">
-                <p class="text-xs uppercase tracking-wider text-gray-500 mb-3">
-                  Included in package
-                </p>
-                <ul class="text-sm text-gray-600 grid grid-cols-1 gap-2">
-                  {pkg.features.map((feature) => (
-                    <li class="flex items-center gap-2">
-                      <span class="w-4 h-4 bg-[#F68712] rounded-sm flex items-center justify-center flex-shrink-0">
-                        <svg
-                          class="w-3 h-3 text-white"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                        >
-                          <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
-                        </svg>
-                      </span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <Button className="w-full bg-[#20513F] hover:bg-[#20513F]/90 text-white border-none">
-                View Details
-              </Button>
             </div>
           </div>
         ))
@@ -233,3 +597,155 @@ const packages = [
     </div>
   </div>
 </section>
+
+<!-- Modal for package details -->
+<div id="package-modal" class="fixed inset-0 z-50 flex items-center justify-center hidden" aria-modal="true" role="dialog">
+  <!-- Modal backdrop - animated background overlay -->
+  <div class="modal-backdrop fixed inset-0 bg-black bg-opacity-60 transition-opacity opacity-0"></div>
+  
+  <!-- Modal content -->
+  <div class="modal-container relative bg-white rounded-lg shadow-xl max-w-3xl w-full mx-4 md:mx-auto my-8 max-h-[90vh] overflow-y-auto transform transition-all opacity-0 translate-y-4">
+    <!-- Modal header with close button -->
+    <div class="sticky top-0 flex items-center justify-between p-4 md:p-6 border-b border-gray-200 bg-white z-10 rounded-t-lg">
+      <h3 id="modal-title" class="text-xl md:text-2xl font-bold text-[#20513F]"></h3>
+      <button id="close-modal" class="p-2 rounded-full hover:bg-gray-100 transition-colors duration-200" aria-label="Close modal">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-500">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Modal body -->
+    <div id="modal-content" class="p-4 md:p-6"></div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.view-details-btn');
+    const modal = document.getElementById('package-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalContent = document.getElementById('modal-content');
+    const modalBackdrop = document.querySelector('.modal-backdrop');
+    const modalContainer = document.querySelector('.modal-container');
+    const closeModalBtn = document.getElementById('close-modal');
+    
+    // Function to open modal
+    const openModal = (packageId, title, content) => {
+      // Set modal content
+      modalTitle.textContent = title;
+      modalContent.innerHTML = content;
+      
+      // Show modal
+      modal.classList.remove('hidden');
+      
+      // Add animation classes with a small delay for proper animation
+      setTimeout(() => {
+        modalBackdrop.classList.add('opacity-100');
+        modalContainer.classList.remove('opacity-0', 'translate-y-4');
+      }, 10);
+      
+      // Prevent body scroll
+      document.body.style.overflow = 'hidden';
+      
+      // Set focus to modal for accessibility
+      modalContainer.focus();
+      
+      // Add event listeners to contact buttons inside the modal content
+      setupContactButtons();
+    };
+    
+    // Function to close modal
+    const closeModal = () => {
+      // Start animations
+      modalBackdrop.classList.remove('opacity-100');
+      modalContainer.classList.add('opacity-0', 'translate-y-4');
+      
+      // Hide modal after animation completes
+      setTimeout(() => {
+        modal?.classList.add('hidden');
+        // Clear content
+        modalContent.innerHTML = '';
+        // Allow body scroll again
+        document.body.style.overflow = '';
+      }, 300); // Match the transition duration
+    };
+    
+    // Function to handle contact button clicks
+    const setupContactButtons = () => {
+      const contactButtons = document.querySelectorAll('.contact-redirect-btn');
+      contactButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // First close the modal
+          closeModal();
+          
+          // After the modal closing animation completes, scroll to the contact section
+          setTimeout(() => {
+            window.location.href = '#contact';
+          }, 310); // Slightly longer than the close animation
+        });
+      });
+    };
+    
+    // Event listeners for opening modal
+    buttons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        const card = e.target.closest('.package-card');
+        const packageId = button.getAttribute('data-package-id');
+        const title = card.querySelector('h3').textContent;
+        const content = card.querySelector('.package-details-content').innerHTML;
+        
+        openModal(packageId, title, content);
+      });
+    });
+    
+    // Event listeners for closing modal
+    closeModalBtn.addEventListener('click', closeModal);
+    
+    // Close when clicking outside the modal
+    modalBackdrop.addEventListener('click', closeModal);
+    
+    // Prevent clicks inside the modal from closing it
+    modalContainer.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+    
+    // Close on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+  });
+</script>
+
+<style>
+  /* Modal animations */
+  .modal-backdrop {
+    transition: opacity 0.3s ease-out;
+  }
+  
+  .modal-container {
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+  }
+  
+  /* Scrollbar styling for modal */
+  .modal-container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .modal-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 8px;
+  }
+  
+  .modal-container::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 8px;
+  }
+  
+  .modal-container::-webkit-scrollbar-thumb:hover {
+    background: #ccc;
+  }
+</style>
