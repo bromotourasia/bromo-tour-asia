@@ -11,6 +11,7 @@ const seoData = {
   title: title,
   description:
     "Explore Bromo, Tumpak Sewu, Yogyakarta, and Bali with our expert local guides.",
+  canonical: Astro.url.href,
   openGraph: {
     basic: {
       title: "Bromo Tour – Your Trusted Travel Partner in Indonesia",
@@ -133,6 +134,7 @@ const pageStructuredData = {
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="canonical" href={Astro.url.href} />
     <meta name="generator" content={Astro.generator} />
 
     <!-- SEO using astro-seo component -->
