@@ -81,32 +81,38 @@ const packages = [
   },
   {
     id: 5,
-    title: "Yogyakarta Tour",
+    title: "Yogyakarta Tour - 6 Days 5 Nights",
     description:
       "Discover the cultural heart of Java with visits to UNESCO World Heritage sites Borobudur and Prambanan temples, explore Sultan Palace, and experience the vibrant atmosphere of Malioboro Street.",
-    price: "Rp. -",
-    duration: "-",
+    price: "From Rp 5,000K/person",
+    duration: "6 Days / 5 Nights",
     features: [
       "All transportation",
       "Hotel stays",
       "Daily breakfast",
       "Entrance fees",
+      "Jeep tours",
+      "Cave exploration",
+      "Local guides",
     ],
     cloudinaryId: "roman-kirienko-1L7NYIltBqc-unsplash_ncugoh", // Cloudinary folder/image ID
     alt: "Cultural heart of Java with Borobudur and Prambanan temples",
   },
   {
     id: 6,
-    title: "Bali Tour",
+    title: "Bali Tour - 8 Days 7 Nights",
     description:
       "Experience the paradise island of Bali with visits to stunning beaches, ancient temples, lush rice terraces, and vibrant cultural attractions in Ubud and other popular destinations.",
-    price: "Rp. -",
-    duration: "-",
+    price: "From Rp 8,500K/person",
+    duration: "8 Days / 7 Nights",
     features: [
       "All transportation",
       "Hotel stays",
       "Daily breakfast",
       "Entrance fees",
+      "Fast boat to Nusa Penida",
+      "Local guide",
+      "Dolphin watching",
     ],
     cloudinaryId: "alfiano-sutianto-exFdOWkYBQw-unsplash_m1c6ii", // Cloudinary folder/image ID
     alt: "Paradise island of Bali with beaches, temples and rice terraces",
@@ -163,7 +169,7 @@ const packages = [
                 {pkg.description}
               </p>
       
-              {pkg.id <= 3 ? (
+              {pkg.id <= 3 || pkg.id === 5 || pkg.id === 6 ? (
                 <>
                   <div class="mb-5">
                     <p class="text-2xl font-bold text-[#F68712]">{pkg.price}</p>
@@ -209,11 +215,11 @@ const packages = [
               )}
       
               <button 
-                class={`w-full text-white border-none py-3 rounded-md text-center font-medium transition-colors duration-300 ${pkg.id <= 3 ? 'view-details-btn bg-[#20513F] hover:bg-[#20513F]/90' : 'bg-gray-400 cursor-not-allowed'}`}
+                class={`w-full text-white border-none py-3 rounded-md text-center font-medium transition-colors duration-300 ${pkg.id <= 3 || pkg.id === 5 || pkg.id === 6 ? 'view-details-btn bg-[#20513F] hover:bg-[#20513F]/90' : 'bg-gray-400 cursor-not-allowed'}`}
                 data-package-id={pkg.id}
-                disabled={pkg.id > 3}
+                disabled={pkg.id > 3 && pkg.id !== 5 && pkg.id !== 6}
               >
-                {pkg.id <= 3 ? 'View Details' : 'Coming Soon'}
+                {pkg.id <= 3 || pkg.id === 5 || pkg.id === 6 ? 'View Details' : 'Coming Soon'}
               </button>
               
               <!-- Hidden content for modal - this won't be displayed directly -->
@@ -225,42 +231,155 @@ const packages = [
                     <!-- Package 1: 3D2N BROMO – IJEN TOUR PACKAGE -->
                     <div class="mb-4">
                       <h5 class="font-medium text-[#20513F]">Day 1: SURABAYA – BROMO</h5>
-                      <ul class="text-sm text-gray-600 ml-5 mt-2 space-y-1 list-disc">
-                        <li>Pick up from Surabaya Airport upon your arrival</li>
-                        <li>Transfer to Bromo area (approx. 3 hours drive)</li>
-                        <li>Check in at homestay in Bromo (Celina/Family/Mantep Homestay or similar)</li>
-                        <li>Free time to rest</li>
-                      </ul>
+                      <p class="text-sm text-gray-600 mt-1 mb-2 italic">Hotel: Celina/Family/Mantep Homestay or similar</p>
+                      <table class="w-full text-sm text-gray-600 border-collapse">
+                        <thead>
+                          <tr class="bg-gray-100">
+                            <th class="border p-2 text-left">Start</th>
+                            <th class="border p-2 text-left">Finish</th>
+                            <th class="border p-2 text-left">Activity</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">Pick up from Surabaya Airport upon your arrival</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">Transfer to Bromo area (approx. 3 hours drive)</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">Check in at homestay in Bromo</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">Free time to rest</td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                     
                     <div class="mb-4">
                       <h5 class="font-medium text-[#20513F]">Day 2: BROMO TOUR – IJEN</h5>
-                      <ul class="text-sm text-gray-600 ml-5 mt-2 space-y-1 list-disc">
-                        <li>Early morning wake-up (2:00 AM)</li>
-                        <li>Jeep 4WD pick-up from hotel (2:30 AM)</li>
-                        <li>Visit Penanjakan Peak/Kingkong Hill/Prau Hill for sunrise viewpoint</li>
-                        <li>Witness spectacular sunrise around 5:10 AM</li>
-                        <li>Visit Mount Bromo crater</li>
-                        <li>Return to hotel for breakfast and checkout</li>
-                        <li>Transfer to Ijen area (approx. 6 hours)</li>
-                        <li>Check in at homestay in Ijen (Catimor/Arabica/Ijen Bondowoso or similar)</li>
-                        <li>Free time to rest</li>
-                      </ul>
+                      <p class="text-sm text-gray-600 mt-1 mb-2 italic">Hotel: Catimor/Arabica/Ijen Bondowoso or similar</p>
+                      <table class="w-full text-sm text-gray-600 border-collapse">
+                        <thead>
+                          <tr class="bg-gray-100">
+                            <th class="border p-2 text-left">Start</th>
+                            <th class="border p-2 text-left">Finish</th>
+                            <th class="border p-2 text-left">Activity</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="border p-2">02:00</td>
+                            <td class="border p-2">02:30</td>
+                            <td class="border p-2">Early morning wake-up</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">02:30</td>
+                            <td class="border p-2">05:00</td>
+                            <td class="border p-2">Jeep 4WD pick-up from hotel and drive to Penanjakan Peak/Kingkong Hill/Prau Hill for sunrise viewpoint</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">05:00</td>
+                            <td class="border p-2">05:30</td>
+                            <td class="border p-2">Witness spectacular sunrise around 5:10 AM</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">05:30</td>
+                            <td class="border p-2">07:00</td>
+                            <td class="border p-2">Visit Mount Bromo crater</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">07:00</td>
+                            <td class="border p-2">08:30</td>
+                            <td class="border p-2">Return to hotel for breakfast and checkout</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">08:30</td>
+                            <td class="border p-2">14:30</td>
+                            <td class="border p-2">Transfer to Ijen area (approx. 6 hours)</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">14:30</td>
+                            <td class="border p-2">15:00</td>
+                            <td class="border p-2">Check in at homestay in Ijen</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">15:00</td>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">Free time to rest</td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                     
                     <div class="mb-4">
                       <h5 class="font-medium text-[#20513F]">Day 3: IJEN TOUR – KETAPANG PORT</h5>
-                      <ul class="text-sm text-gray-600 ml-5 mt-2 space-y-1 list-disc">
-                        <li>Early morning checkout (1:00 AM)</li>
-                        <li>Transfer to Paltuding (starting point for Ijen trekking)</li>
-                        <li>Hike Mount Ijen for approximately 2 hours</li>
-                        <li>Experience the famous Blue Fire (when available)</li>
-                        <li>Enjoy the sunrise and view of blue-green Ijen Lake</li>
-                        <li>Observe the traditional sulfur miners at work</li>
-                        <li>Trek back down to Paltuding (approx. 1.5 hours)</li>
-                        <li>Transfer to Ketapang Port (for connections to Bali)</li>
-                        <li>End of tour services</li>
-                      </ul>
+                      <p class="text-sm text-gray-600 mt-1 mb-2 italic">No hotel stay (last day)</p>
+                      <table class="w-full text-sm text-gray-600 border-collapse">
+                        <thead>
+                          <tr class="bg-gray-100">
+                            <th class="border p-2 text-left">Start</th>
+                            <th class="border p-2 text-left">Finish</th>
+                            <th class="border p-2 text-left">Activity</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="border p-2">01:00</td>
+                            <td class="border p-2">01:30</td>
+                            <td class="border p-2">Early morning checkout</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">01:30</td>
+                            <td class="border p-2">02:00</td>
+                            <td class="border p-2">Transfer to Paltuding (starting point for Ijen trekking)</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">02:00</td>
+                            <td class="border p-2">04:00</td>
+                            <td class="border p-2">Hike Mount Ijen for approximately 2 hours</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">04:00</td>
+                            <td class="border p-2">05:30</td>
+                            <td class="border p-2">Experience the famous Blue Fire (when available)</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">05:30</td>
+                            <td class="border p-2">06:30</td>
+                            <td class="border p-2">Enjoy the sunrise and view of blue-green Ijen Lake</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">06:30</td>
+                            <td class="border p-2">07:00</td>
+                            <td class="border p-2">Observe the traditional sulfur miners at work</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">07:00</td>
+                            <td class="border p-2">08:30</td>
+                            <td class="border p-2">Trek back down to Paltuding (approx. 1.5 hours)</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">08:30</td>
+                            <td class="border p-2">10:30</td>
+                            <td class="border p-2">Transfer to Ketapang Port (for connections to Bali)</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">10:30</td>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">End of tour services</td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                     
                     <div class="bg-gray-50 p-4 rounded-md mb-4">
@@ -322,42 +441,150 @@ const packages = [
                     <!-- Package 2: 3D2N BROMO – TUMPAK SEWU TOUR PACKAGE -->
                     <div class="mb-4">
                       <h5 class="font-medium text-[#20513F]">Day 1: SURABAYA – BROMO</h5>
-                      <ul class="text-sm text-gray-600 ml-5 mt-2 space-y-1 list-disc">
-                        <li>Pick up from Surabaya Airport upon your arrival</li>
-                        <li>Transfer to Bromo area (approx. 3 hours drive)</li>
-                        <li>Check in at homestay in Bromo (Celina/Family/Mantep Homestay or similar)</li>
-                        <li>Free time to rest</li>
-                      </ul>
+                      <p class="text-sm text-gray-600 mt-1 mb-2 italic">Hotel: Celina/Family/Mantep Homestay or similar</p>
+                      <table class="w-full text-sm text-gray-600 border-collapse">
+                        <thead>
+                          <tr class="bg-gray-100">
+                            <th class="border p-2 text-left">Start</th>
+                            <th class="border p-2 text-left">Finish</th>
+                            <th class="border p-2 text-left">Activity</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">Pick up from Surabaya Airport upon your arrival</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">Transfer to Bromo area (approx. 3 hours drive)</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">Check in at homestay in Bromo</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">Free time to rest</td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                     
                     <div class="mb-4">
                       <h5 class="font-medium text-[#20513F]">Day 2: BROMO TOUR – TUMPAK SEWU</h5>
-                      <ul class="text-sm text-gray-600 ml-5 mt-2 space-y-1 list-disc">
-                        <li>Early morning wake-up (2:00 AM)</li>
-                        <li>Jeep 4WD pick-up from hotel (2:30 AM)</li>
-                        <li>Visit Penanjakan Peak/Kingkong Hill/Prau Hill for sunrise viewpoint</li>
-                        <li>Witness spectacular sunrise around 5:10 AM</li>
-                        <li>Visit Mount Bromo crater</li>
-                        <li>Return to hotel for breakfast and checkout (9:30 AM)</li>
-                        <li>Transfer to Tumpak Sewu area (approx. 4 hours)</li>
-                        <li>Check in at homestay in Tumpak Sewu (Yanto/Harmony/D'Rael Guesthouse or similar)</li>
-                        <li>Free time to rest</li>
-                      </ul>
+                      <p class="text-sm text-gray-600 mt-1 mb-2 italic">Hotel: Yanto/Harmony/D'Rael Guesthouse or similar</p>
+                      <table class="w-full text-sm text-gray-600 border-collapse">
+                        <thead>
+                          <tr class="bg-gray-100">
+                            <th class="border p-2 text-left">Start</th>
+                            <th class="border p-2 text-left">Finish</th>
+                            <th class="border p-2 text-left">Activity</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="border p-2">02:00</td>
+                            <td class="border p-2">02:30</td>
+                            <td class="border p-2">Early morning wake-up</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">02:30</td>
+                            <td class="border p-2">05:00</td>
+                            <td class="border p-2">Jeep 4WD pick-up from hotel and drive to Penanjakan Peak/Kingkong Hill/Prau Hill for sunrise viewpoint</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">05:00</td>
+                            <td class="border p-2">05:30</td>
+                            <td class="border p-2">Witness spectacular sunrise around 5:10 AM</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">05:30</td>
+                            <td class="border p-2">07:00</td>
+                            <td class="border p-2">Visit Mount Bromo crater</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">07:00</td>
+                            <td class="border p-2">09:30</td>
+                            <td class="border p-2">Return to hotel for breakfast and checkout</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">09:30</td>
+                            <td class="border p-2">13:30</td>
+                            <td class="border p-2">Transfer to Tumpak Sewu area (approx. 4 hours)</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">13:30</td>
+                            <td class="border p-2">14:00</td>
+                            <td class="border p-2">Check in at homestay in Tumpak Sewu</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">14:00</td>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">Free time to rest</td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                     
                     <div class="mb-4">
                       <h5 class="font-medium text-[#20513F]">Day 3: TUMPAK SEWU WATERFALL TOUR – SURABAYA</h5>
-                      <ul class="text-sm text-gray-600 ml-5 mt-2 space-y-1 list-disc">
-                        <li>Breakfast at the homestay (6:00 AM)</li>
-                        <li>Brief meeting with local guide about the program (7:15 AM)</li>
-                        <li>Tumpak Sewu Waterfall Tour (7:30 AM - 11:00 AM)</li>
-                        <li>Visit Panorama Site, Tumpak Sewu Bottom Site, and Tetes Cave (Goa Tetes)</li>
-                        <li>Trek back to car parking area</li>
-                        <li>Return to homestay for shower and checkout</li>
-                        <li>Transfer back to Surabaya (approx. 4.5 hours)</li>
-                        <li>Drop off at hotel or airport</li>
-                        <li>End of tour services</li>
-                      </ul>
+                      <p class="text-sm text-gray-600 mt-1 mb-2 italic">No hotel stay (last day)</p>
+                      <table class="w-full text-sm text-gray-600 border-collapse">
+                        <thead>
+                          <tr class="bg-gray-100">
+                            <th class="border p-2 text-left">Start</th>
+                            <th class="border p-2 text-left">Finish</th>
+                            <th class="border p-2 text-left">Activity</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="border p-2">06:00</td>
+                            <td class="border p-2">07:00</td>
+                            <td class="border p-2">Breakfast at the homestay</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">07:00</td>
+                            <td class="border p-2">07:15</td>
+                            <td class="border p-2">Brief meeting with local guide about the program</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">07:30</td>
+                            <td class="border p-2">11:00</td>
+                            <td class="border p-2">Tumpak Sewu Waterfall Tour - Visit Panorama Site, Bottom Site, and Tetes Cave (Goa Tetes)</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">11:00</td>
+                            <td class="border p-2">11:30</td>
+                            <td class="border p-2">Trek back to car parking area</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">11:30</td>
+                            <td class="border p-2">12:30</td>
+                            <td class="border p-2">Return to homestay for shower and checkout</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">12:30</td>
+                            <td class="border p-2">17:00</td>
+                            <td class="border p-2">Transfer back to Surabaya (approx. 4.5 hours)</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">17:00</td>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">Drop off at hotel or airport</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">End of tour services</td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
                     
                     <div class="bg-gray-50 p-4 rounded-md mb-4">
@@ -520,6 +747,905 @@ const packages = [
                         <li>Prices valid for low and high season (May 1 - Sept 30, Dec 11-24) but not for peak season (Eid Mubarak, Christmas, New Year)</li>
                         <li>For 2 persons, Jeep Bromo is shared with other tourists and no Bromo guide is provided</li>
                         <li>Room arrangements vary based on group size</li>
+                      </ul>
+                    </div>
+                  </>
+                )}
+                
+                {pkg.id === 5 && (
+                  <>
+                    <!-- Package 5: 6D5N YOGYAKARTA TOUR PACKAGE -->
+                    <div class="mb-4">
+                      <h5 class="font-medium text-[#20513F]">Day 1: YOGYAKARTA AIRPORT – DIENG</h5>
+                      <p class="text-sm text-gray-600 mt-1 mb-2 italic">Hotel: Front One or Amerta Giri Hotel Wonosobo or similar</p>
+                      <table class="w-full text-sm text-gray-600 border-collapse">
+                        <thead>
+                          <tr class="bg-gray-100">
+                            <th class="border p-2 text-left">Start</th>
+                            <th class="border p-2 text-left">Finish</th>
+                            <th class="border p-2 text-left">Activity</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">Airport pick up</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">Having lunch then heading Dieng in about 4 hours</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">Accommodation check in Dieng at Front One or Amerta Giri Hotel Wonosobo or similar</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">Having dinner at the hotel and rest program</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                    <div class="mb-4">
+                      <h5 class="font-medium text-[#20513F]">Day 2: DIENG TOUR – BOROBUDUR</h5>
+                      <p class="text-sm text-gray-600 mt-1 mb-2 italic">Hotel: Cempaka Villa or Sinom Hotel or similar</p>
+                      <table class="w-full text-sm text-gray-600 border-collapse">
+                        <thead>
+                          <tr class="bg-gray-100">
+                            <th class="border p-2 text-left">Start</th>
+                            <th class="border p-2 text-left">Finish</th>
+                            <th class="border p-2 text-left">Activity</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="border p-2">04:00</td>
+                            <td class="border p-2">05:30</td>
+                            <td class="border p-2">Start from hotel & driving 30 minutes to Sikunir for the Sikunir Golden Sunrise</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">05:30</td>
+                            <td class="border p-2">07:00</td>
+                            <td class="border p-2">Leave Sikunir & back to hotel for breakfast & check out</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">07:00</td>
+                            <td class="border p-2">09:00</td>
+                            <td class="border p-2">Start to visit Color lake</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">09:00</td>
+                            <td class="border p-2">09:30</td>
+                            <td class="border p-2">Arrive in Color Lake & enjoy the beautiful lake from peak of the hill</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">09:30</td>
+                            <td class="border p-2">10:30</td>
+                            <td class="border p-2">Leave The Color Lake & heading Sikidang Crater</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">10:30</td>
+                            <td class="border p-2">11:30</td>
+                            <td class="border p-2">Arrive in Sikidang Crater and enjoy here for 1 hour</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">11:30</td>
+                            <td class="border p-2">13:00</td>
+                            <td class="border p-2">Then we arrive in The Complex of Hindust Temple and enjoy here</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">13:00</td>
+                            <td class="border p-2">16:00</td>
+                            <td class="border p-2">We leave the temple & continue to Borobudur area for check in hotel</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">16:00</td>
+                            <td class="border p-2">16:30</td>
+                            <td class="border p-2">Accommodation check in Borobudur at Cempaka Villa or Sinom Hotel or similar</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">16:30</td>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">Free program</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="mb-4">
+                      <h5 class="font-medium text-[#20513F]">Day 3: BOROBUDUR SUNRISE & TEMPLE – PRAMBANAN – YOGYAKARTA</h5>
+                      <p class="text-sm text-gray-600 mt-1 mb-2 italic">Hotel: Pandanaran or @Home or Indies Heritage or Tjokro Style Hotel or similar</p>
+                      <table class="w-full text-sm text-gray-600 border-collapse">
+                        <thead>
+                          <tr class="bg-gray-100">
+                            <th class="border p-2 text-left">Start</th>
+                            <th class="border p-2 text-left">Finish</th>
+                            <th class="border p-2 text-left">Activity</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="border p-2">04:00</td>
+                            <td class="border p-2">04:30</td>
+                            <td class="border p-2">Start from hotel for Sunrise View at Setumbu Hill</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">04:30</td>
+                            <td class="border p-2">06:30</td>
+                            <td class="border p-2">Arrive at Setumbu Hill then we enjoy the sunrise</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">06:30</td>
+                            <td class="border p-2">08:00</td>
+                            <td class="border p-2">Leave Setumbu & back to hotel for breakfast and check out hotel</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">08:00</td>
+                            <td class="border p-2">10:30</td>
+                            <td class="border p-2">Trip to Borobudur Temple and we explore the temple</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">10:30</td>
+                            <td class="border p-2">13:00</td>
+                            <td class="border p-2">Leave Borobudur then heading direct to Prambanan Temple</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">13:00</td>
+                            <td class="border p-2">15:00</td>
+                            <td class="border p-2">Arrive at Prambanan Temple and we explore the temple</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">15:00</td>
+                            <td class="border p-2">16:00</td>
+                            <td class="border p-2">We leave Prambanan Temple and heading to Yogyakarta city</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">16:00</td>
+                            <td class="border p-2">16:30</td>
+                            <td class="border p-2">Accommodation check in Yogyakarta at Pandanaran or @Home or Indies Heritage or Tjokro Style Hotel or similar for 3 nights</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">16:30</td>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">Free and easy</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                    <div class="mb-4">
+                      <h5 class="font-medium text-[#20513F]">Day 4: JOMBLANG CAVE & TIMANG BEACH</h5>
+                      <p class="text-sm text-gray-600 mt-1 mb-2 italic">Hotel: Same Yogyakarta hotel</p>
+                      <table class="w-full text-sm text-gray-600 border-collapse">
+                        <thead>
+                          <tr class="bg-gray-100">
+                            <th class="border p-2 text-left">Start</th>
+                            <th class="border p-2 text-left">Finish</th>
+                            <th class="border p-2 text-left">Activity</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="border p-2">07:00</td>
+                            <td class="border p-2">08:30</td>
+                            <td class="border p-2">Pick you up hotel then heading to Jomblang cave</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">08:30</td>
+                            <td class="border p-2">09:00</td>
+                            <td class="border p-2">We arrive in the base camp of Jomblang Cave</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">09:00</td>
+                            <td class="border p-2">12:30</td>
+                            <td class="border p-2">Start to explore the Jomblang Cave and enjoy</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">12:30</td>
+                            <td class="border p-2">13:30</td>
+                            <td class="border p-2">Back to the base camp of Jomblang Cave</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">13:30</td>
+                            <td class="border p-2">15:00</td>
+                            <td class="border p-2">After lunch, we continue driving to Timang Beach</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">15:00</td>
+                            <td class="border p-2">17:30</td>
+                            <td class="border p-2">Arrive at the Timang Beach parking jeep. Then Jeep will bring us to until the entrance post ticket</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">17:30</td>
+                            <td class="border p-2">19:30</td>
+                            <td class="border p-2">We leave Timang and we back our Yogyakarta Hotel</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">19:30</td>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">Arrive in hotel Yogyakarta and free program</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                    <div class="mb-4">
+                      <h5 class="font-medium text-[#20513F]">Day 5: MERAPI JEEP – PINDUL CAVE TUBING – YOGYAKARTA</h5>
+                      <p class="text-sm text-gray-600 mt-1 mb-2 italic">Hotel: Same Yogyakarta hotel</p>
+                      <table class="w-full text-sm text-gray-600 border-collapse">
+                        <thead>
+                          <tr class="bg-gray-100">
+                            <th class="border p-2 text-left">Start</th>
+                            <th class="border p-2 text-left">Finish</th>
+                            <th class="border p-2 text-left">Activity</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="border p-2">07:30</td>
+                            <td class="border p-2">09:00</td>
+                            <td class="border p-2">We start to go to Merapi Volcano</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">09:00</td>
+                            <td class="border p-2">11:00</td>
+                            <td class="border p-2">Arrive at the Merapi Jeep parking area then start to explore Merapi by Jeep in about 2 hours</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">11:00</td>
+                            <td class="border p-2">12:30</td>
+                            <td class="border p-2">After the trip is finished, we leave Merapi and continue to visit Pindul Cave Tubing</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">12:30</td>
+                            <td class="border p-2">15:00</td>
+                            <td class="border p-2">Arrive in Pindul. Activity to explore the cave in about 2 hours</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">15:00</td>
+                            <td class="border p-2">17:00</td>
+                            <td class="border p-2">Leave Pindul then back Yogyakarta</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">17:00</td>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">Free program</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                    <div class="mb-4">
+                      <h5 class="font-medium text-[#20513F]">Day 6: YOGYAKARTA – AIRPORT</h5>
+                      <p class="text-sm text-gray-600 mt-1 mb-2 italic">No hotel stay (last day)</p>
+                      <table class="w-full text-sm text-gray-600 border-collapse">
+                        <thead>
+                          <tr class="bg-gray-100">
+                            <th class="border p-2 text-left">Start</th>
+                            <th class="border p-2 text-left">Finish</th>
+                            <th class="border p-2 text-left">Activity</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">Free program</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">Check out hotel and driving 1,5 hours to reach Yogyakarta Airport</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">-</td>
+                            <td class="border p-2">Our trip is finished</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md mb-4">
+                      <h5 class="font-medium text-[#20513F] mb-2">Tour Package Includes</h5>
+                      <ul class="text-sm text-gray-600 space-y-1 list-disc ml-5">
+                        <li>Transport service for 6 Days (Covered: car, driver fee, petrol, toll and parking fees)</li>
+                        <li>Jeep Merapi Tour</li>
+                        <li>Jeep Timang Beach</li>
+                        <li>Local guide Borobudur, Prambanan, Dieng, Sikunir Golden Sunrise, Merapi Jeep</li>
+                        <li>Mineral water</li>
+                        <li>1 night hotel or homestay Dieng Plateau at Front One or Amerta Giri Hotel Wonosobo or similar</li>
+                        <li>1 night hotel or homestay Borobudur at Cempaka Villa or Sinom Hotel or similar</li>
+                        <li>3 nights hotel Yogyakarta at Pandanaran or @Home or Indies Heritage or Tjokro Style Hotel or similar</li>
+                        <li>Jomblang Cave activity</li>
+                        <li>Pindul Cave Tubing</li>
+                        <li>Entrance ticket Sikunir Hill (Dieng), Dieng, Borobudur Temple, Setumbu Hill, Prambanan</li>
+                        <li>5x breakfast</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md mb-4">
+                      <h5 class="font-medium text-[#20513F] mb-2">Tour Excludes</h5>
+                      <ul class="text-sm text-gray-600 space-y-1 list-disc ml-5">
+                        <li>Lunch and dinner</li>
+                        <li>Travel insurance</li>
+                        <li>Personal expenses</li>
+                        <li>Timang Beach activity (Gondola)</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md mb-4">
+                      <h5 class="font-medium text-[#20513F] mb-2">Pricing (per person)</h5>
+                      <ul class="text-sm text-gray-600 space-y-1 ml-5">
+                        <li>2 person = Rp 7,200,000 / person</li>
+                        <li>3 person = Rp 6,000,000 / person</li>
+                        <li>4 person = Rp 5,900,000 / person</li>
+                        <li>5 person = Rp 5,800,000 / person</li>
+                        <li>6 person = Rp 5,650,000 / person</li>
+                        <li>7 person = Rp 5,500,000 / person</li>
+                        <li>8 person = Rp 5,350,000 / person</li>
+                        <li>9 person = Rp 5,200,000 / person</li>
+                        <li>10 person = Rp 5,000,000 / person</li>
+                      </ul>
+                    </div>
+
+                    <div class="bg-gray-50 p-4 rounded-md mb-4">
+                      <h5 class="font-medium text-[#20513F] mb-2">Room Arrangement</h5>
+                      <ul class="text-sm text-gray-600 space-y-1 ml-5">
+                        <li>2 pax = 1 room twin/double</li>
+                        <li>3 pax = 1 room twin/double + 1 extra bed</li>
+                        <li>4 pax = 2 rooms twin/double</li>
+                        <li>5 pax = 2 rooms twin/double + 1 extra bed</li>
+                        <li>6 pax = 3 rooms twin/double</li>
+                        <li>7 pax = 3 rooms twin/double + 1 extra bed</li>
+                        <li>8 pax = 4 rooms twin/double</li>
+                        <li>9 pax = 4 rooms twin/double + 1 extra bed</li>
+                        <li>10 pax = 5 rooms twin/double</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md mb-4">
+                      <h5 class="font-medium text-[#20513F] mb-2">Entrance Tickets and Play Ground Per Person</h5>
+                      <ul class="text-sm text-gray-600 space-y-1 ml-5">
+                        <li>Gondola Timang = Rp 200,000</li>
+                        <li>Jomblang Cave = Rp 500,000</li>
+                        <li>Pindul Cave Tubing = Rp 200,000</li>
+                        <li>Sikunir Hill = Rp 20,000</li>
+                        <li>Dieng = Rp 230,000</li>
+                        <li>Putuk Setumbu Hill = Rp 50,000</li>
+                        <li>Borobudur = Rp 455,000</li>
+                        <li>Prambanan = Rp 400,000</li>
+                        <li>Pengger Pine Forest = Rp 20,000</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md mb-4">
+                      <h5 class="font-medium text-[#20513F] mb-2">Important Notes</h5>
+                      <ul class="text-sm text-gray-600 space-y-2 ml-5 list-disc">
+                        <li>Payment: 50% before tour start, 50% before tour ends (Cash in IDR)</li>
+                        <li>For lunch and dinner, drivers will bring you to restaurants as per your request</li>
+                        <li>Prices valid for Low Season (04 Jan – 30 April, 01 Oct – 10 Dec) and not valid for High Season (01 May – 30 Sept, 11 – 24 Dec) or Peak Season (Eid Mubarak, Christmas, New Year)</li>
+                        <li>Room arrangements vary based on group size</li>
+                        <li>Hotels subject to availability - equivalent alternatives may be provided</li>
+                      </ul>
+                    </div>
+                  </>
+                )}
+                
+                {pkg.id === 6 && (
+                  <>
+                    <!-- Package 6: 8D7N BALI TOUR -->
+                    <div class="mb-4">
+                      <h5 class="font-medium text-[#20513F]">Day 1: Arrival – Kuta & Uluwatu Sunset</h5>
+                      <p class="text-sm text-gray-600 mt-1 mb-2 italic">Hotel: Kuta or Jimbaran area (e.g., The Anvaya Beach Resort Bali, InterContinental Bali Resort)</p>
+                      <table class="w-full text-sm text-gray-600 border-collapse">
+                        <thead>
+                          <tr class="bg-gray-100">
+                            <th class="border p-2 text-left">Time</th>
+                            <th class="border p-2 text-left">Activity</th>
+                            <th class="border p-2 text-left">Travel Duration</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="border p-2">10:00 AM</td>
+                            <td class="border p-2">Arrival at Ngurah Rai International Airport</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">11:00 AM</td>
+                            <td class="border p-2">Check-in at hotel (Kuta/Jimbaran)</td>
+                            <td class="border p-2">15–30 mins from airport</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">2:00 PM</td>
+                            <td class="border p-2">Relax at Kuta Beach</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">4:00 PM</td>
+                            <td class="border p-2">Depart to Uluwatu Temple</td>
+                            <td class="border p-2">30–45 mins from Kuta</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">5:00 PM</td>
+                            <td class="border p-2">Explore Uluwatu Temple & cliff views</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">6:00 PM</td>
+                            <td class="border p-2">Watch the Kecak Fire Dance during sunset</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">7:00 PM</td>
+                            <td class="border p-2">Dinner at Jimbaran Beach Seafood Café</td>
+                            <td class="border p-2">20 mins from Uluwatu</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                    <div class="mb-4">
+                      <h5 class="font-medium text-[#20513F]">Day 2: East Bali Highlights – Lempuyang, Tirta Gangga, Tukad Cepung, Taman Ujung</h5>
+                      <p class="text-sm text-gray-600 mt-1 mb-2 italic">Hotel: Ubud area (e.g., Kastara Resort, Adiwana Bisma)</p>
+                      <table class="w-full text-sm text-gray-600 border-collapse">
+                        <thead>
+                          <tr class="bg-gray-100">
+                            <th class="border p-2 text-left">Time</th>
+                            <th class="border p-2 text-left">Activity</th>
+                            <th class="border p-2 text-left">Travel Duration</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="border p-2">4:30 AM</td>
+                            <td class="border p-2">Depart for Lempuyang Temple</td>
+                            <td class="border p-2">2.5–3 hrs from Kuta</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">7:30 AM</td>
+                            <td class="border p-2">Explore the Gate of Heaven at Lempuyang</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">9:00 AM</td>
+                            <td class="border p-2">Depart for Tirta Gangga</td>
+                            <td class="border p-2">30 mins</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">9:30 AM</td>
+                            <td class="border p-2">Discover Tirta Gangga Water Palace</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">11:00 AM</td>
+                            <td class="border p-2">Depart for Tukad Cepung Waterfall</td>
+                            <td class="border p-2">1 hr 15 mins</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">12:15 PM</td>
+                            <td class="border p-2">Trek and visit Tukad Cepung</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">2:00 PM</td>
+                            <td class="border p-2">Depart for Taman Ujung</td>
+                            <td class="border p-2">1.5 hrs</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">3:30 PM</td>
+                            <td class="border p-2">Stroll around the Royal Water Palace</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">4:30 PM</td>
+                            <td class="border p-2">Head to Ubud</td>
+                            <td class="border p-2">2 hrs</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">6:30 PM</td>
+                            <td class="border p-2">Check-in at your Ubud hotel</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="mb-4">
+                      <h5 class="font-medium text-[#20513F]">Day 3: Penglipuran Village – Bali Swing – Aloha Ubud – Campuhan Ridge Walk</h5>
+                      <p class="text-sm text-gray-600 mt-1 mb-2 italic">Hotel: Same Ubud hotel</p>
+                      <table class="w-full text-sm text-gray-600 border-collapse">
+                        <thead>
+                          <tr class="bg-gray-100">
+                            <th class="border p-2 text-left">Time</th>
+                            <th class="border p-2 text-left">Activity</th>
+                            <th class="border p-2 text-left">Travel Duration</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="border p-2">8:00 AM</td>
+                            <td class="border p-2">Depart for Penglipuran Village</td>
+                            <td class="border p-2">45 mins–1 hr</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">9:00 AM</td>
+                            <td class="border p-2">Explore the traditional Balinese village</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">10:30 AM</td>
+                            <td class="border p-2">Depart to Bali Swing</td>
+                            <td class="border p-2">1 hr</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">11:30 AM</td>
+                            <td class="border p-2">Experience adrenaline-pumping swings</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">1:00 PM</td>
+                            <td class="border p-2">Head to Aloha Ubud</td>
+                            <td class="border p-2">30 mins</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">1:30 PM</td>
+                            <td class="border p-2">Take beautiful Instagrammable photos at Aloha Ubud</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">3:00 PM</td>
+                            <td class="border p-2">Return to Ubud center</td>
+                            <td class="border p-2">30 mins</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">3:30 PM</td>
+                            <td class="border p-2">Sunset walk at Campuhan Ridge</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">6:00 PM</td>
+                            <td class="border p-2">Optional: Legong Dance Show at Ubud Palace</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="mb-4">
+                      <h5 class="font-medium text-[#20513F]">Day 4: Tegalalang – Handara Gate – Hidden Hills – Jatiluwih – Sukawati</h5>
+                      <p class="text-sm text-gray-600 mt-1 mb-2 italic">Hotel: Bedugul or Sanur area (e.g., CLV Hotel & Villa Bedugul or Maya Sanur Resort)</p>
+                      <table class="w-full text-sm text-gray-600 border-collapse">
+                        <thead>
+                          <tr class="bg-gray-100">
+                            <th class="border p-2 text-left">Time</th>
+                            <th class="border p-2 text-left">Activity</th>
+                            <th class="border p-2 text-left">Travel Duration</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="border p-2">7:00 AM</td>
+                            <td class="border p-2">Depart to Tegalalang Rice Terrace</td>
+                            <td class="border p-2">30 mins</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">7:30 AM</td>
+                            <td class="border p-2">Explore lush rice fields and take jungle swing photos</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">9:00 AM</td>
+                            <td class="border p-2">Depart to Handara Gate</td>
+                            <td class="border p-2">1.5 hrs</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">10:30 AM</td>
+                            <td class="border p-2">Photo stop at the iconic Handara Golf Gate</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">11:30 AM</td>
+                            <td class="border p-2">Depart to Hidden Hills Wanagiri</td>
+                            <td class="border p-2">15 mins</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">11:45 AM</td>
+                            <td class="border p-2">Snap dreamy lake-view photos</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">12:30 PM</td>
+                            <td class="border p-2">Depart to Jatiluwih Rice Terrace</td>
+                            <td class="border p-2">1.5 hrs</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">2:00 PM</td>
+                            <td class="border p-2">UNESCO World Heritage site rice paddies walk</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">3:30 PM</td>
+                            <td class="border p-2">Head to Sukawati Art Market</td>
+                            <td class="border p-2">1.5 hrs</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">5:00 PM</td>
+                            <td class="border p-2">Shop for handicrafts & souvenirs</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">6:00 PM</td>
+                            <td class="border p-2">Check-in to Bedugul or Sanur hotel</td>
+                            <td class="border p-2">30 mins–1 hr</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="mb-4">
+                      <h5 class="font-medium text-[#20513F]">Day 5: Lovina Dolphins – Ulun Danu – Tanah Lot – La Brisa Beach Club</h5>
+                      <p class="text-sm text-gray-600 mt-1 mb-2 italic">Hotel: Canggu or Seminyak (e.g., Theanna Eco Villa and Spa, Alila Seminyak)</p>
+                      <table class="w-full text-sm text-gray-600 border-collapse">
+                        <thead>
+                          <tr class="bg-gray-100">
+                            <th class="border p-2 text-left">Time</th>
+                            <th class="border p-2 text-left">Activity</th>
+                            <th class="border p-2 text-left">Travel Duration</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="border p-2">3:30 AM</td>
+                            <td class="border p-2">Depart to Lovina Beach for sunrise dolphin tour</td>
+                            <td class="border p-2">1.5 hrs from Bedugul</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">5:30 AM</td>
+                            <td class="border p-2">Dolphin watching experience</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">7:00 AM</td>
+                            <td class="border p-2">Breakfast break</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">8:00 AM</td>
+                            <td class="border p-2">Drive to Ulun Danu Beratan Temple</td>
+                            <td class="border p-2">45 mins</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">8:45 AM</td>
+                            <td class="border p-2">Visit lake temple on the water</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">10:00 AM</td>
+                            <td class="border p-2">Depart to Tanah Lot</td>
+                            <td class="border p-2">2 hrs</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">12:00 PM</td>
+                            <td class="border p-2">Lunch break + Explore Tanah Lot temple on cliff</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">2:30 PM</td>
+                            <td class="border p-2">Depart to La Brisa Beach Club, Canggu</td>
+                            <td class="border p-2">1 hr</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">3:30 PM</td>
+                            <td class="border p-2">Relax, swim, and enjoy sunset views</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">6:30 PM</td>
+                            <td class="border p-2">Check-in at hotel in Seminyak or Canggu</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="mb-4">
+                      <h5 class="font-medium text-[#20513F]">Day 6: Nusa Penida West (Full Day Tour)</h5>
+                      <p class="text-sm text-gray-600 mt-1 mb-2 italic">Hotel: Nusa Penida (e.g., Autentik Penida, Semabu Hills Hotel)</p>
+                      <table class="w-full text-sm text-gray-600 border-collapse">
+                        <thead>
+                          <tr class="bg-gray-100">
+                            <th class="border p-2 text-left">Time</th>
+                            <th class="border p-2 text-left">Activity</th>
+                            <th class="border p-2 text-left">Travel Duration</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="border p-2">6:30 AM</td>
+                            <td class="border p-2">Depart to Sanur Harbor</td>
+                            <td class="border p-2">30–45 mins from Canggu</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">7:30 AM</td>
+                            <td class="border p-2">Fast boat to Nusa Penida</td>
+                            <td class="border p-2">45 mins</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">8:30 AM</td>
+                            <td class="border p-2">Arrive & start West Penida tour</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">9:00 AM</td>
+                            <td class="border p-2">Kelingking Beach Viewpoint</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">10:30 AM</td>
+                            <td class="border p-2">Angel's Billabong & Broken Beach</td>
+                            <td class="border p-2">30 mins drive</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">12:00 PM</td>
+                            <td class="border p-2">Lunch near Angel's Billabong</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">2:00 PM</td>
+                            <td class="border p-2">Swim or relax at Crystal Bay</td>
+                            <td class="border p-2">30 mins drive</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">4:30 PM</td>
+                            <td class="border p-2">Check-in to hotel in Nusa Penida</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="mb-4">
+                      <h5 class="font-medium text-[#20513F]">Day 7: Nusa Penida East – Return to Bali</h5>
+                      <p class="text-sm text-gray-600 mt-1 mb-2 italic">Hotel: Sanur or Kuta (e.g., Maison Aurelia Sanur, The Vira Bali Boutique Hotel)</p>
+                      <table class="w-full text-sm text-gray-600 border-collapse">
+                        <thead>
+                          <tr class="bg-gray-100">
+                            <th class="border p-2 text-left">Time</th>
+                            <th class="border p-2 text-left">Activity</th>
+                            <th class="border p-2 text-left">Travel Duration</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="border p-2">7:00 AM</td>
+                            <td class="border p-2">Depart for East Nusa Penida</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">8:00 AM</td>
+                            <td class="border p-2">Diamond Beach & Atuh Beach</td>
+                            <td class="border p-2">1–1.5 hrs from West</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">10:30 AM</td>
+                            <td class="border p-2">Tree House Molenteng & Thousand Islands Viewpoint</td>
+                            <td class="border p-2">30 mins</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">12:00 PM</td>
+                            <td class="border p-2">Lunch nearby</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">2:00 PM</td>
+                            <td class="border p-2">Return to harbor</td>
+                            <td class="border p-2">1.5 hrs</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">3:00 PM</td>
+                            <td class="border p-2">Fast boat to Sanur</td>
+                            <td class="border p-2">45 mins</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">4:30 PM</td>
+                            <td class="border p-2">Check-in hotel in Sanur or Kuta</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+
+                    <div class="mb-4">
+                      <h5 class="font-medium text-[#20513F]">Day 8: Leisure & Departure</h5>
+                      <p class="text-sm text-gray-600 mt-1 mb-2 italic">No hotel stay (last day)</p>
+                      <table class="w-full text-sm text-gray-600 border-collapse">
+                        <thead>
+                          <tr class="bg-gray-100">
+                            <th class="border p-2 text-left">Time</th>
+                            <th class="border p-2 text-left">Activity</th>
+                            <th class="border p-2 text-left">Travel Duration</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td class="border p-2">8:00 AM</td>
+                            <td class="border p-2">Spa or chill morning at hotel</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">10:00 AM</td>
+                            <td class="border p-2">Shopping at Krisna Oleh-Oleh / The Keranjang</td>
+                            <td class="border p-2">30–45 mins roundtrip</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">12:00 PM</td>
+                            <td class="border p-2">Lunch nearby or at the airport</td>
+                            <td class="border p-2">—</td>
+                          </tr>
+                          <tr>
+                            <td class="border p-2">2–4:00 PM</td>
+                            <td class="border p-2">Transfer to Ngurah Rai Airport</td>
+                            <td class="border p-2">15–30 mins from Sanur/Kuta</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md mb-4">
+                      <h5 class="font-medium text-[#20513F] mb-2">Tour Package Includes</h5>
+                      <ul class="text-sm text-gray-600 space-y-1 list-disc ml-5">
+                        <li>Private air-conditioned vehicle for 8 days with experienced driver</li>
+                        <li>7 nights accommodation (3-4 star hotels with breakfast)</li>
+                        <li>Professional English-speaking guide</li>
+                        <li>Return fast boat tickets to Nusa Penida</li>
+                        <li>Dolphin watching tour in Lovina</li>
+                        <li>All entrance tickets to attractions mentioned in itinerary</li>
+                        <li>Daily bottled mineral water</li>
+                        <li>All applicable government taxes</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md mb-4">
+                      <h5 class="font-medium text-[#20513F] mb-2">Tour Excludes</h5>
+                      <ul class="text-sm text-gray-600 space-y-1 list-disc ml-5">
+                        <li>International/domestic airfare</li>
+                        <li>Travel insurance</li>
+                        <li>Lunches and dinners (unless specified)</li>
+                        <li>Personal expenses (shopping, souvenirs, spa, etc.)</li>
+                        <li>Additional activities not mentioned in itinerary</li>
+                        <li>Bali swing fees at Tegalalang (additional payment on-site)</li>
+                        <li>Tips for guides and drivers</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md mb-4">
+                      <h5 class="font-medium text-[#20513F] mb-2">Pricing (per person)</h5>
+                      <ul class="text-sm text-gray-600 space-y-1 ml-5">
+                        <li>2 person = Rp 12,500K / person</li>
+                        <li>3-4 person = Rp 10,800K / person</li>
+                        <li>5-6 person = Rp 9,500K / person</li>
+                        <li>7-9 person = Rp 9,000K / person</li>
+                        <li>10-12 person = Rp 8,500K / person</li>
+                      </ul>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-4 rounded-md mb-4">
+                      <h5 class="font-medium text-[#20513F] mb-2">Important Notes</h5>
+                      <ul class="text-sm text-gray-600 space-y-2 ml-5 list-disc">
+                        <li>Payment: 50% deposit required to confirm booking, remaining 50% payable on arrival (Cash in IDR)</li>
+                        <li>Hotels subject to availability - equivalent alternatives may be provided</li>
+                        <li>Itinerary may be adjusted due to weather conditions or other unforeseen circumstances</li>
+                        <li>Early morning activities require early wake-up times</li>
+                        <li>Prices valid for standard season but may increase during peak periods (July-August, Christmas, New Year)</li>
+                        <li>Comfortable shoes and clothing recommended for temple visits</li>
+                        <li>Tour suitable for all ages, but includes long travel times between destinations</li>
                       </ul>
                     </div>
                   </>

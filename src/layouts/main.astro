@@ -2,38 +2,9 @@
 import "../styles/global.css";
 import Navbar from "@/components/layout/Navbar.astro";
 import Footer from "@/components/layout/Footer.astro";
-import { SEO } from "astro-seo";
 
-const { title = "Bromo Tour - Tour & Travel Services", isErrorPage = false } =
+const { title = "Bromo Tour | Indonesia Travel Packages & Guided Tours", isErrorPage = false } =
   Astro.props;
-
-const seoData = {
-  title: title,
-  description:
-    "Explore Bromo, Tumpak Sewu, Yogyakarta, and Bali with our expert local guides.",
-  canonical: Astro.url.href,
-  openGraph: {
-    basic: {
-      title: "Bromo Tour – Your Trusted Travel Partner in Indonesia",
-      type: "website",
-      image: "https://bromotour.asia/images/logo.png",
-    },
-    optional: {
-      description:
-        "Discover the beauty of Mount Bromo, Tumpak Sewu, Yogyakarta, and Bali with expert local guides. Book your unforgettable adventure today!",
-      url: "https://bromotour.asia",
-    },
-  },
-  extend: {
-    meta: [
-      {
-        name: "keywords",
-        content:
-          "Bromo tour, Indonesia travel, Yogyakarta tour, Bali tour, Tumpak Sewu waterfall, Mount Bromo, Ijen crater, guided tours Indonesia, adventure travel Indonesia, best Indonesia tours",
-      },
-    ],
-  },
-};
 
 // JSON-LD for the Travel Agency information
 const travelAgencyStructuredData = {
@@ -41,7 +12,7 @@ const travelAgencyStructuredData = {
   "@type": "TravelAgency",
   name: "Bromo Tour",
   description:
-    "Premium tour packages for Mount Bromo, Ijen, and other popular destinations in East Java, Indonesia.",
+    "Join our group tours and explore Indonesia, including Bromo, Bali, and Yogyakarta. We offer 10+ fun and easy guided trips. Talk to our team and get a free quote today.",
   image: "https://bromotour.asia/images/logo.png",
   url: "https://bromotour.asia",
   telephone: "+6285707307178",
@@ -86,10 +57,10 @@ const travelAgencyStructuredData = {
 const pageStructuredData = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  name: "Bromo Tour - Tour & Travel Services",
+  name: "Bromo Tour | Indonesia Travel Packages & Guided Tours",
   url: "https://bromotour.asia",
   description:
-    "Indonesia Tour & Travel Services with Trusted Local Guides. We’re here to lead, guide, and take you through the iconic landscapes of Bromo, the awe-inspiring Tumpak Sewu Waterfall, the vibrant culture of Yogyakarta, and the serene beauty of Bali.",
+    "Join our group tours and explore Indonesia, including Bromo, Bali, and Yogyakarta. We offer 10+ fun and easy guided trips. Talk to our team and get a free quote today.",
   hasPart: [
     {
       "@type": "WebPageElement",
@@ -127,18 +98,23 @@ const pageStructuredData = {
 
 <html lang="en" class="overflow-x-hidden">
   <head>
-    <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="canonical" href={Astro.url.href} />
+    <link rel="canonical" href="https://bromotour.asia" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="title" content="Bromo Tour | Indonesia Travel Packages & Guided Tours">
+    <meta name="description" content="Join our group tours and explore Indonesia, including Bromo, Bali, and Yogyakarta. We offer 10+ fun and easy guided trips. Talk to our team and get a free quote today.">
+    <meta name="keywords" content="Indonesia travel, Indonesia tour, guided tours Indonesia, Indonesia travel packages, tour and travel services Indonesia, best Indonesia tours, Bromo tour, Mount Bromo tour, Yogyakarta tour, Bali tour, Ijen crater tour, Tumpak Sewu waterfall tour, East Java tour packages, Bali travel guide, Yogyakarta travel package, best guided tours in Indonesia, adventure travel in Indonesia, group tours to Mount Bromo and Ijen, sunrise tour Mount Bromo, 3-day Java adventure tour, private Bromo and Ijen tour package, explore Java waterfalls and volcanoes, Bali to Java travel packages, custom Indonesia travel plans, private Indonesia tour guide, local travel agency Indonesia, affordable Indonesia tour packages, book Indonesia group tours">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="author" content="bromotourasia">
 
-    <!-- SEO using astro-seo component -->
-    <SEO {...seoData} />
     <script
       type="application/ld+json"
       set:html={JSON.stringify(travelAgencyStructuredData)}
